@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include <iostream>
 
 /*
 树的基本术语

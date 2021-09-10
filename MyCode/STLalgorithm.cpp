@@ -10,6 +10,102 @@
 using namespace std;
 using namespace Tool;
 
+
+//
+// 3个容器适配器
+// 每个适配器都定义两个构造，默认构造创建一个空对象； 接受一个容器的构造函数
+// 默认情况下，stack, queue是基于deque实现，priority_queue是在vector之上实现的
+// 但可以在创建适配器是指定
+// 
+// stack<string, vector<string> > str_stk;  vector实现的栈
+// stack<int> stk;
+// stk.push(1);
+// auto val = stk.top();
+// stk.pop();
+// 
+// priority_queue 优先队列  push 插入元素到队尾 (并排序)
+// 升序队列，小顶堆
+// priority_queue <int, vector<int>, greater<int> > q;
+// 降序队列，大顶堆 (默认)
+// priority_queue <int, vector<int>, less<int> >q;
+
+
+// 
+// 顺序容器类型
+// vector, deque, list, forward_list, array, string
+//
+//顺序容器操作基本类似，以vector为例
+void STLAlgorithm::VectorTest()
+{
+	//构造
+		// vector<int> vec(10);  10个默认值元素
+		// vector<int> vec(10, 1);  10个1;
+		// vector<int> vec1(vec);  拷贝/移动构造   类型必须匹配
+		//		内置数组类型不允许拷贝或对象赋值，但array可以（显示赋值不能用{}，因为可能会大小不同）
+		// vector<int> vec(b.begin(), b.begin()+3);  类型可以不同但元素间须可转换
+		//	    vector<string> vst;  
+		//     vector<const char*> vc(vst.begin(), vst.end());
+		// vector(initializer_list<value_type>il)	vector<int> vec{1,2,3};
+
+	//Capacity 容量
+		//empty()/max_size()
+		//capacity()/reserve()
+		//size()/resize()	  //forward_list不支持 size()
+		//shrink_to_fit()	//回收size以外的多余内存
+
+	//assign
+		// vec.assign(b.begin(), b.begin()+3);
+		// vec.assign(size_type n, const value_type& val);
+		// vec.assign({1,2,3});	
+
+	// swap(v1, v2);  元素本身并未交换，只交换了两个容器的内部数据结构
+	// 所有迭代器并不会失效，但指向交换之前的容器（string迭代器会失效）
+	// array会真正交换他们的元素，迭代器指向的元素已经发生改变
+	// 
+	// 关系运算符 （比较容器大小）必须相同类型的容器且元素类型相同
+	// 类似与string的比较，主要取决于第一个不相等元素的大小
+	// 
+	// 顺序容器添加元素
+	// 	c.push_back(t); c.emplace_back(args);
+	// 	c.push_front(); c.emplace_front(args);
+	// 	c.insert(p, t); c.emplace(p, args);
+	// 	c.insert(p, n, t);  c.insert(p, b, e);  c.insert(p, il);  //il -> initializer_list
+	// forward_list不支持push_back,emplace_back;有自己专业版本的insert,emplace
+	// vector,string不支持push_front,emplace_front;
+	// 
+	// 删除元素
+	//     c.pop_back();  c.pop_front();
+	// 	c.erase(p);  c.erase(b, e);
+	// 	c.clear();    <=>  c.erase(c.begin(), c.end() );
+	// forward_list不支持pop_back,有自己特殊版本的erase
+	// vector,string不支持pop_front
+	// 
+	// 特殊的forward_list操作
+	//   当删除第3个元素时，第2个指向第4个，找第3个的前一个(第2个)不好找，
+	//  所以提供特殊的操作 添加/删除当前的下一个元素
+	// 	   lst.before_begin();  lst.cbefore_begin();    首前(首元素之前并不存在的元素)
+	// 	   lst.insert_after(p, t);  lst.insert_after(p, n, t);
+	// 	   lst.insert_after(p, b, e);  lst.insert_after(p, il);
+	// 	   lst.emplace_after(p, args);
+	// 	   lst.erase_after(p);  lst.erase(p, b, e);
+	// 
+	
+	
+	//note:
+	// 未初始化的vector容器不能进行下标操作
+		// vector<int> vec;
+		// vec[0] = 1;
+	//clear()并不真正释放内存(这是为优化效率所做的事)，
+		//	clear实际所做的是为vector中所保存的所有对象调用析构函数(如果有的话), 然后初始化size这些东西，让觉得把所有的对象清除了。
+		//	真正释放内存是在vector的析构函数里进行的，所以一旦超出vector的作用域（如函数返回)，
+		//	首先它所保存的所有对象会被析构，然后会调用allocator中的deallocate函数回收对象本身的内存。
+		// 可用 vector<int>(vec).swap(vec); 或是 vec.shrink_to_fit();
+	//如果在一个循环中插入/删除容器中的元素，不要缓存end()返回的迭代器，会失效，应该每次调用while(itr != c.end())
+	vector<int> vec(3);
+	MyPrint(vec.capacity());
+
+}
+
 void STLAlgorithm::StringTest()
 {
 	//构造
@@ -76,43 +172,6 @@ void STLAlgorithm::StringTest()
 	//转换函数
 		// int atoi(const char *nptr);//stoi
 		// std::to_string(value);
-}
-
-void STLAlgorithm::VectorTest()
-{
-	//vector构造
-		// explicit vector(size_type n);		vector<int> vec(10);  10个默认值元素
-		// vector<int> vec(10, 1);  10个1;
-		// vector<int> vec(b);  拷贝/移动构造
-		// vector<int> vec(b.begin(), b.begin()+3); 
-		// vector(initializer_list<value_type>il)	vector<int> vec{1,2,3};
-
-	//Capacity 容量
-		//empty()/max_size()
-		//capacity()/reserve()
-		//size()/resize()	
-		//shrink_to_fit()	//回收size以外的多余内存
-	
-	//assign
-		// vec.assign(b.begin(), b.begin()+3);
-		// vec.assign(size_type n, const value_type& val);
-		// vec.assign({1,2,3});
-	// push_back , pop_back, emplace_back
-	// insert, emplace, swap
-	// erase, clear		
-
-	//note:
-	// 未初始化的vector容器不能进行下标操作
-		// vector<int> vec;
-		// vec[0] = 1;
-	//clear()并不真正释放内存(这是为优化效率所做的事)，
-		//	clear实际所做的是为vector中所保存的所有对象调用析构函数(如果有的话), 然后初始化size这些东西，让觉得把所有的对象清除了。
-		//	真正释放内存是在vector的析构函数里进行的，所以一旦超出vector的作用域（如函数返回)，
-		//	首先它所保存的所有对象会被析构，然后会调用allocator中的deallocate函数回收对象本身的内存。
-		// 可用 vector<int>(vec).swap(vec); 或是 vec.shrink_to_fit();
-	vector<int> vec(3);
-	MyPrint(vec.capacity());
-
 }
 
 void STLAlgorithm::AlgorithmTest()
