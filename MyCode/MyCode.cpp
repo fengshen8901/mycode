@@ -7,6 +7,7 @@
 #include "RBTree.h"
 #include <forward_list>
 #include<vector>
+#include<map>
 
 using namespace Tool;
 
@@ -14,8 +15,8 @@ using namespace Tool;
 
 int main()
 {
-	forward_list<int> lst;
-	lst.emplace_after(lst.before_begin(), 4);
+	STLAlgorithm::MapTest();
+	
 	////////////////////////////////////////////////////////
 	system("pause");
 	return 0;

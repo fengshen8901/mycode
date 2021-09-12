@@ -7,3 +7,8 @@
 
 //内置类型的变量未显示初始化，定义在函数体外的将被默认初始化，
 //在函数体内不被初始化，变量未定义，访问将引发错误
+
+//C++中IO操作都可以用流对象来实现，一般有三种流对象：
+//1）控制台流对象: istream, ostream, iostream
+//2）文件流对象 : fstream, ifstream, ofstream
+//3）字符串流对象 : stringstream, istringstream, ostringstream

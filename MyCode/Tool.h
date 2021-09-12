@@ -80,7 +80,11 @@ namespace Tool
 	template<typename T>
 	void MyPrintSTL(T b, T e)
 	{
-		if(b >= e) return;
+		if (b == e)
+		{
+			std::cout << "empty" << std::endl;
+			return;
+		}
 		while (b != e)
 		{
 			std::cout << *b << "\t";

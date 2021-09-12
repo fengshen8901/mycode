@@ -3,6 +3,8 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
+#include <unordered_set>
 
 #include "STLalgorithm.h"
 #include "Tool.h"
@@ -29,11 +31,44 @@ using namespace Tool;
 // 降序队列，大顶堆 (默认)
 // priority_queue <int, vector<int>, less<int> >q;
 
+//插入迭代器
+// back_inserter
+// front_inserter
+// inserter
+//   auto it = inserter(vec, iter); 得到一个插入迭代器
+//   *it = val;  <=>  it = vec.insert(iter, val);  ++it;
+// 
+// vector<int> vec{1,2,3};
+// auto it = back_inserter(vec);
+// *it = 4;
+//  *it = 5;
+// auto iter = inserter(vec, vec.end());
+// *iter = 6;
+//
 
 // 
 // 顺序容器类型
 // vector, deque, list, forward_list, array, string
 //
+// list和forward_list成员函数
+// lst.merge(lst2);
+// lst.merge(lst2, comp);
+//   lst,lst2都必须是有序的，合并后lst2变为空
+// lst.remove(val);
+// lst.remove_if(pred); 
+//   调用erase删除满足条件的每个元素（通用版本不会删除）
+// lst.reverse();  反转元素顺序
+// lst.sort();
+// lst.sort(comp);
+// lst.unique();
+// lst.unique(pred);
+//   调用erase删除相邻重复元素
+// 
+// splice/splice_after  捻接; 绞接(两段绳子);
+// lst.splice(p, lst2);	 将lst2中所有元素移动到lst的p之前，两链表必须类型相同，且不能是同一链表
+// lst.splice(p, lst2, p2);  将lst2中p2指向的元素移动到lst的p之前，可以同一链表
+// lst,splice(p, lst2, b, e);  将lst2中给定的范围元素移动到lst的p之前，可以同一链表，但p不能指向给定范围中元素
+// 
 //顺序容器操作基本类似，以vector为例
 void STLAlgorithm::VectorTest()
 {
@@ -101,9 +136,88 @@ void STLAlgorithm::VectorTest()
 		//	首先它所保存的所有对象会被析构，然后会调用allocator中的deallocate函数回收对象本身的内存。
 		// 可用 vector<int>(vec).swap(vec); 或是 vec.shrink_to_fit();
 	//如果在一个循环中插入/删除容器中的元素，不要缓存end()返回的迭代器，会失效，应该每次调用while(itr != c.end())
-	vector<int> vec(3);
-	MyPrint(vec.capacity());
 
+
+}
+
+// 
+// 关联容器类型(8种）
+// map, set
+// multimap, multiset
+// unordered_map, unordered_set
+// unordered_multemap, unordered_multeset
+// 有序容器的键值类型必须定义元素的比较方法，“<”，或指定排序的比较函数指针
+//
+// 插入操作
+// c.insert(v);
+// c.emplace(args);
+// c.insert(b, e);
+// c.emplace(il);
+//   c.insert(p, v); c.emplace(p, args);  p为提示从哪开始搜索新元素应该存储的位置
+// 返回值，不包含(unordered)重复关键字的容器，返回pair, 
+//	    first 添加的新元素的迭代器
+//     second (bool),已经存在啥也不干返回false,插入成功返回true
+//  包含(unordered)重复关键字的容器，返回新元素的迭代器
+//
+// 删除操作
+// c.erase(key); 返回删除的元素数量
+// c.erase(p); 返回删除的下一个迭代器
+// c.erase(b, e); 返回e
+// 
+// 下标操作
+// set没有下标操作（因为没有”值“）
+// 不能对multimap, unordered_multimap进行下标操作
+// 对map进行下标操作时，如果不存在会创建一个元素并插入到map中，关联值将进行值初始化(0)
+// 
+// c.find(k); 返回一个迭代器
+// c.count(k); 返回关键字等于k的元素数量
+// c.lower_bound(k);  返回第一个关键字不小于k的元素的迭代器
+// c.upper_bound(k);  返回第一个关键字大于k的元素的迭代器
+// c.equal_range(k);  返回一个pair, 关键字等于k的元素的范围 [ )，若没有，两个c.end()
+//
+// 桶
+//   无序容器，根据元素键的哈希值存到相应的桶，相同的哈希值元素存到相同的桶
+// 桶接口
+// c.bucket_count();  正在使用的桶的数目
+// c.max_bucket_count();  容器能容纳的最多的桶的数量
+// c.bucket_size(n);  第n个桶中元素个数
+// c.bucket(k);  关键字k的元素在第几个桶
+// 桶迭代
+// local_iterator/const_local_iterator  桶中元素的迭代器类型
+// c.begin(n); c.end(n);  桶n的首(尾后)元素迭代器
+// c.cbegin(n); c.cend(n);
+// 哈希策略
+// c.load_factor()  每个桶的平均元素数量(float)
+// c.max_load_factor();  
+// c.rehash(n);  重组存储，使得bucket_count>=n
+// c.reserve(n);  重组存储，使得c可以保存n个元素且不必rehash
+// 
+//无序容器对关键字类型的要求：
+// 有==运算符，和哈希计算函数 如下
+//
+
+size_t myhash(const Element& v)
+{
+	return hash<string>()(v.str);
+}
+
+bool CompE(const Element& a, const Element& b)
+{
+	return a.str == b.str;
+}
+
+void STLAlgorithm::MapTest()
+{
+	//桶的期望大小，哈希函数指针，相等性判断运算符指针
+	unordered_map<Element, int, decltype(myhash)*, decltype(CompE )*> m(42, myhash, CompE);
+	m["abc"] = 2;
+	m["bcd"] = 3;
+	cout << m.begin()->second << endl;;
+	unordered_set<Element, decltype(myhash)*, decltype(CompE)*> s(2, myhash, CompE);
+	s.insert("abc");
+	
+
+	cout << s.bucket_count();
 }
 
 void STLAlgorithm::StringTest()
@@ -238,14 +352,26 @@ void STLAlgorithm::AlgorithmTest()
 
 		将vec1复制到vec2, vec2必须足够大
 		copy(vec1.begin(), vec1.end(), vec2.begin());
+		copy_if(beg, end, dest, unaryPred);
+		copy_n(beg, n, dest);
+
+		move(beg, end, dest);
+
 		将vec1的元素经过处理再复制到vec2, vec2必须足够大
 		transform(vec1.begin(), vec1.end(), vec.begin(), [](int v) {  return v + 100; });
 		transform(vec.begin(), vec.end(), vec.begin(), [](int v) {  return v + 100; });  //遍历所有元素调用处理函数
+		
+		transform(beg, end, beg2, dest, binaryOp);  两个序列二元操作
 
 		替换 8换成-8
 		replace(vec.begin(), vec.end(), 8, -8);
 		replace_if
 
+		填充, 全写入8
+		fill(vec.begin(), vec.end(), 8);
+		fill_n(vec.begin() , 3, 99);  前3个改成99( vec够3个,不能越界)
+
+		重排操作
 		剔除(并不是真正删除) remove并非真正删除,只是挪到后面,甚至size都没变
 		remove(vec.begin(), vec.end(), 8);
 		remove_if
@@ -263,14 +389,14 @@ void STLAlgorithm::AlgorithmTest()
 		//	}
 		//	++itr;
 		//}
-		//}
+		//}		
 
 		相邻的去重(并不是真正删除)
 		unique(vec.begin(), vec.end());
+		unique(beg, end, binaryPred);
 
-		填充, 全写入8
-		fill(vec.begin(), vec.end(), 8);
-		fill_n(vec.begin() , 3, 99);  前3个改成99( vec够3个,不能越界)
+		围绕mid指向的元素进行元素转动，元素mid成为首元素，其次是mid+1到end, beg到(mid-1),返回原来begin迭代器
+		
 
 		
 	*/
