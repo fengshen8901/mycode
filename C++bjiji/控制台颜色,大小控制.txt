@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+//设置窗口大小，颜色
+void initConsoleWindow()
+{
+	char buffer[30] = { 0 };//仅用来存"mode con cols=%d lines=%d"
+	char buffer1[30] = { 0 };
+	sprintf(buffer, "mode con cols=%d lines=%d", 100, 50);//mode模式，console控制台，column列，line排，行
+	//打印形式的strcpy(并非打印了）
+	system(buffer);
+	strcpy(buffer1, "color 255");
+	system(buffer1);
+}
+
+
+void main()
+{
+	initConsoleWindow();
+}                          
+"mode con cols=%d lines=%d

@@ -1,0 +1,31 @@
+#include<windows.h>        //GetStdHandle和SetConsoleTextAttribute在头文件windows.h中
+
+#include<iostream>
+
+using namespace std;
+
+
+
+
+void SetColor(unsigned short ForeColor = 4, unsigned short BackGroundColor = 4) //给参数默认值，使它                                                                                                          //可以接受0/1/2个参数
+
+{
+
+	HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);    //获取句柄
+
+	SetConsoleTextAttribute(hCon, ForeColor | BackGroundColor);
+
+};
+
+
+
+int main()
+
+{	
+	SetColor(44,33);
+	cout << "444" << endl;
+	
+	SetColor(40,30);
+	cout << "444" << endl;
+	return 0;
+}

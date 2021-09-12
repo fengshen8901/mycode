@@ -1,0 +1,63 @@
+函数指针，指针函数，指向 指针函数 的 函数指针
+
+函数指针：指向函数的指针变量
+定义：   返回值的数据类型 （*指针变量名）（函数参数列表）   int (*p)(int,int)
+作用： 用于在某些情况下对一个函数通过函数指针进行回调（回调：在某些情况下自动调用）
+
+函数指针是一个指针变量，也可改指向
+函数指针的数组： int (*p[5])(int,int)
+	         p[0] = add;
+		 p[0](3,5);  =8
+
+int add(int a,int b)
+{
+	return a+b;
+}
+int sub(int a,int b)
+{
+	return a-b;
+}
+int test(int (*p)(int,int))
+{
+	cout << p(3,5) << endl;
+}
+
+if(x==1)
+	test(add);
+else
+	test(sub);
+
+
+指针函数： 返回值为指针的函数
+注意：避免返回局部变量或临时变量的地址（野指针）
+int* fun(int n)
+{
+	int* p = new int[n];
+	return p;
+}
+
+int *pi =fun(3);
+memset(pi,0,3*sizeof(int))
+delete [] pi;
+pi = NULL;
+
+
+指向 指针函数 的 函数指针：就是一个（函数）指针，只不过它指向的是一个指针函数
+
+定义：  int* add(int a)
+	{
+		return &a;
+	}
+
+
+	int* (*p)(int) = add ;
+	int* temp = add;
+
+
+
+
+
+
+
+
+

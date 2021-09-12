@@ -1,0 +1,45 @@
+ #include <conio.h>
+getch()  接收一个字符（不用回车）
+
+输入输出：
+
+ #include <stdio.h>
+  	scanf()
+  	printf()
+
+	getchar() 输入一个字符
+	putchar() 输出一个字符
+
+	gets() 输入一个字符串
+	puts() 输出一个字符串
+
+数字函数：
+ #include <math.h>
+	pow(double x,double y) pow(5,3)  5的3次方
+	sqrt(double x)    平方根
+
+数值转换：
+	atof() 将字符串转换为double类型 “8.9” 8.9
+	atoi() 将字符串转换为int类型 “89” 89
+	itoa() 将整形转换为char*
+
+内存操作函数：
+	memcpy(a,b,count) 将字符串b中count个元素拷贝到a，并返回a
+	memcmp(a,b,count) 将字符串a中count个元素与b中比，大返回1，小返回-1，相等回0
+	memset(a,c,count) 将数组a中count个元素都替换成c
+
+字符串操作函数：
+ #include <string.h>
+	strcpy(a,b) 函数用于把字符串b（包括'\0'）拷贝到字符串a中，并返回a
+	strncpy(a,b,count) 函数用于把字符串b中count个元素拷贝到字符串a中，并返回a
+	strcat(a,b) 函数用于把字符串b连结到a的尾部，并返回a（a不能为常量）
+	strncat(a,b,count) 函数用于把字符串b中count个元素连结到a的尾部，并返回a
+
+	strcmp（a,b) 函数用于比较字符串a和b; 当a>b时它返回1 小于 -1，相等0
+
+	strstr(a,b)函数用于返回指向字符串a第一次出现在字符串b中的位置的指针
+	strlen(a)函数用于返回字符串a的长度(不包括\0)
+
+
+
+

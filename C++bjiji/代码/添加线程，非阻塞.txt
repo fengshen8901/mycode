@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+#include <Windows.h>
+#include <conio.h>
+
+DWORD WINAPI getKeyDown(void* _key)
+{
+	while (1)
+	{
+		int result = getch();
+		*(int*)_key = result;
+	}
+}
+
+int KeyDown;
+
+void main()
+{
+	for (int i = 0; i < 10; ++i)
+	{
+		CreateThread(0, 0, getKeyDown, &KeyDown, 0, 0);
+		switch (KeyDown)
+		{
+		case 'a':
+			cout << "a" << endl;
+			break;
+		case 'b':
+			cout << "b" << endl;
+		default:
+			break;
+		}
+		cout << "sssss" << endl;
+		Sleep(1000);
+	}
+}                          
+

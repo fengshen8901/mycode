@@ -1,0 +1,32 @@
+解决输入aaaaaa会一直往左移动n下
+cin>>p;
+fflush(stdin); 刷新输入
+
+char order (用于接收用户输入）
+role 角色，hero 英雄
+element 元素	target 目标
+gameengine 游戏引擎
+direction 方向
+town 村	city 城市  field 野外
+instance 实例  count 计数
+
+onInit()	初始化
+onLogic()	逻辑
+onRender()	渲染
+onDestroy()	清除
+
+
+
+
+		    模式，控制台，列（宽）行（高）
+控制窗口大小：system("mode con cols=%d lines=%d"，15，15）；
+sprintf(but,"mode con cols=%d lines=%d"，15，15）；字符串拷贝
+system（but); 
+
+system("color F5");控制台颜色
+
+线程，解决阻塞问题
+双，解决屏幕闪（刷新）问题
+
+
+
