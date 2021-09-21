@@ -4,17 +4,6 @@ class MySort
 {
 public:
 	/*
-		快速排序, 随机找一个,放到该在的位置
-		时间: O(n*log2n)
-		空间: O(n*log2n)
-		int arr[] = { 3,4,2,2,6,1,8,2,7 };
-		MySort::QuickSort(arr, 0, sizeof(arr) / sizeof(arr[0])-1);
-		std::initializer_list<int> b(std::begin(arr), std::end(arr));
-		MyPrint(b);
-	*/
-	static void QuickSort(int *h, int left, int right);
-
-	/*
 		冒泡排序: 遍历两个相邻,大的往后; 再次遍历找第二大的
 		时间: O(n2)
 		空间: O(1)
@@ -23,7 +12,18 @@ public:
 		std::initializer_list<int> b(std::begin(arr), std::end(arr));
 		MyPrint(b);
 	*/
-	static void BubbleSort(int *h, int len);
+	static void BubbleSort(int* h, int len);
+
+	/*
+	快速排序, 随机找一个,放到该在的位置(冒泡的改进)
+	时间: O(n*log2n)
+	空间: O(n*log2n)
+	int arr[] = { 3,4,2,2,6,1,8,2,7 };
+	MySort::QuickSort(arr, 0, sizeof(arr) / sizeof(arr[0])-1);
+	std::initializer_list<int> b(std::begin(arr), std::end(arr));
+	MyPrint(b);
+*/
+	static void QuickSort(int* h, int left, int right);
 
 	/*
 		选择排序: **
@@ -36,7 +36,7 @@ public:
 		std::initializer_list<int> b(std::begin(arr), std::end(arr));
 		MyPrint(b);
 	*/
-	static void SelectionSort(int *h, int len);
+	static void SelectionSort(int* h, int len);
 
 	/*
 		插入排序: 直接插入排序
@@ -50,18 +50,18 @@ public:
 		std::initializer_list<int> b(std::begin(arr), std::end(arr));
 		MyPrint(b);
 	*/
-	static void InsertSort(int *h, int len);
+	static void InsertSort(int* h, int len);
 
 	/*
-		希尔排序:  用到了插入排序
-		
+		希尔排序:  用到了插入排序		
 		时间: O(n1.3)
 		空间: O(1)
+		增量len/2
 		int arr[] = { 3,4,2,2,6,1,8,2,7 };
 		MySort::ShellSort(arr, sizeof(arr) / sizeof(arr[0]));
 		std::initializer_list<int> b(std::begin(arr), std::end(arr));
 		MyPrint(b);
 	*/
-	static void ShellSort(int *h, int len);
+	static void ShellSort(int* h, int len);
 };
 

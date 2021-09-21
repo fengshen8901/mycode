@@ -39,17 +39,8 @@ public:
 // vfptr
 // 1
 // 16
+
 class bDerived :public bBase
-{
-private:
-	int b;
-public:
-	void f();
-};
-// vfptr
-// 1  4
-//16
-class bDerived1 :public bBase
 {
 private:
 	double b;
@@ -62,6 +53,31 @@ public:
 // 8
 // 24
 
+class bDerived1 :public bBase
+{
+private:
+	int b;
+public:
+	void f();
+};
+// vfptr
+// 1  
+// 4
+//24
+
+class bDerived2 :public bDerived1
+{
+private:
+	double b;
+public:
+	void g();
+	virtual void h();
+};
+// vfptr - self
+// 1 
+// 4
+// 8
+// 32
 //////////////////////////////////////////////////////////////////////////////////////////
 class cBase1
 {

@@ -1,5 +1,8 @@
 
 
+//Big - Endian（大端）：高位字节排放在内存的低地址端，低位字节排放在内存的高地址端。
+//Little - Endian（小端）：低位字节排放在内存的低地址端，高位字节排放在内存的高地址端。
+
 //const char* p = "abc";  //指向常量的指针  底层const
 //char a = 'a';
 //char *const p1 = &a;	//常量指针  顶层const

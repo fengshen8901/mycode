@@ -5,8 +5,8 @@ using namespace std;
 
 void ClassSize::Test()
 {
-	/*cout << sizeof(dBase) << endl;
-	cout << sizeof(dBase1) << endl;
-	cout << sizeof(dBase2) << endl;
-	cout << sizeof(dDerived) << endl;*/
+	cout << sizeof(bBase) << endl;
+	cout << sizeof(bDerived) << endl;
+	cout << sizeof(bDerived1) << endl;
+	cout << sizeof(bDerived2) << endl;
 }

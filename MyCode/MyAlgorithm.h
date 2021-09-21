@@ -49,7 +49,3 @@ namespace Tool
 		return -1;
 	}
 }
-class MyAlgorithm
-{
-};
-
