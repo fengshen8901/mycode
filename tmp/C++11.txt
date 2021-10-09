@@ -1,0 +1,223 @@
+--------------------C++11新特性
+1.列表初始化 { }
+2.nullptr
+3.const
+	const double* cptr = &pi; //指向常数的指针
+	double* const pvar = &var; //指针变量为常数
+	常量表达式:变量的值在编译期间决定
+	constexpr int mf = 20;
+	constexpr int limit = mf + 1;
+	constexpr函数
+		1.返回值和形参必须都是字面值类型。
+		2.函数中只能有一条return语句。
+		constexpr long long factorial(intn){
+			returnn<=1?1:(n*factorial(n-1));
+		}
+		constexpr long long f18 = factorial(20);
+4.类型别名
+	using PointVector = vector<point>; //等价于 typedef vector<point> PointVector; 
+5.类型推导decltype  Point point;   decltype(point)* p2=nullptr;
+	template <typename T>
+	auto GetData() -> decltype(T) { }
+6.范围for语句  for(auto element : vect){  } 
+	使用条件：数据支持v.begin()/v.end()或者是begin(v)/end(v)并返回一个迭代器（支持内置类型的数组）
+7.const iterator(cbegin, cend)
+	vector<int>::const_iterator　iter=cv.begin(); ==  auto iter = cv.cbegin();
+8.标准库函数begin和end
+	引用类型的参数，不能接受指针类型的参数(函数参数传递数组为指针将编译报错 int(*data)[10]）
+	int arr[] = {1, 2, 3}
+	for(int* p = begin(arr); p != end(arr); ++p) {  }
+9.initializer_list<> 参数数量可变但类型相同
+10.后置返回类型 
+	auto getResultArray(int mode)->int(*)[10] 
+	返回包含10个整数的数组的指针（可以计算维度的） sizeof(*arr)/sizeof(**arr)
+11.类的默认函数 =default
+12.委托构造函数
+	Rect(): Rect(0, 0, 0, 0) {  }
+	委托构造函数的语法和构造函数中调用基类构造函数一样。调用顺序，效果什么也差不多。
+13.array容器 std::array<int, 5> a;   a.fill(0);   a.size();   a.at(i);(带有越界检查)    
+	写入速度的比较结果：内置数组的速度最快，vector容器次之，array容器最慢
+14.forward_list 除了单方向和无法取得大小以外，一切都和一般链表没有什么区别  
+	写入速度的比较结果：手写链表的速度最快，list容器次之，forward_list容器最慢
+15.右值引用&&
+	swap	c(std::move(a)); a=std::move(b); b=std::move(c);
+16.容器的emplace成员
+	可以直接传递用于生成对象的参数，对象的创建过程交给容器去执行:  
+	std::list<Rect> rlist;  rlist.emplace_front(10, 10, 20, 20);
+	push_front		emplace_front
+	insert			emplace
+	push_back		emplace_back
+17.管理容器的容量
+	v.reserve(100);		分配至少可以容纳指定数量元素的内存空间。
+	v.size(); 			取得已经保存在容器中数据的个数 
+	v.capacity();  		取得容器的容量
+	v.shrink_to_fit();	释放多余的内存空间，只保留可以容纳容器(size)中数据的最小内存。
+18.string的数值转换函数
+	stoi：string 到 int
+	stof：string 到 float
+	stod：string 到 double
+	string val = "2.5";  auto iVal = stoi(val);
+	第二个参数idx用于保管数值之后下一个字符的位置；连续转换：
+	string values("1.0,2.4,3.5,4.6,5.7");
+	while(values.size()>0){
+ 　		string::size_type sz;
+ 　		cout<<stod(values,&sz)<<endl;
+ 　		if(sz<values.size()){
+ 　　		values=values.substr(sz+1);
+ 　		}
+ 　		else{
+ 　　		values.clear();
+ 　		}
+	}
+	第三个参数  string val("100");  stoi(val, nullptr, 16); -->256
+19.lambda表达式  [capture list] (parameter list) -> return type {function body}
+	捕获列表，其内容是在是表达式被创建的时候决定
+	参数列表，其内容是在表达式被调用时决定
+	默认捕获'值'具有const属性,希望修改捕获值,使用mutable关键字
+	[counter](int v) mutable {　return(v>=60)&&(--counter==0);　}
+20.参数绑定 bind
+	bool istarget(const string& s,int sz){ return s.size()<sz; }
+	vector<string> v{"This","is","a","predicate","."};
+	auto isTarget = bind(istarget, _1, 2);	//_1：占位符，_1代表isTarget被调用时的接受的第一个实参
+	auto found = find_if(v.begin(), v.end(), istarget);
+21.无序关联容器  unordered_map;unordered_set;unordered_multimap;unordered_multiset  无序容器更好的性能
+22.智能指针 
+	shared_ptr; 	//p.use_count() 返回引用计数， p.unique() 是否只有1个引用计数  p.get()  返回原始指针
+	weak_ptr;		看起来更像shared_ptr的附属品,通过lock方法来确认对象是否有效
+	unique_ptr; 	u.reset()	
+	shared_ptr<int>sp(new int(3));   
+	weak_ptr<int>wp(sp);   
+	if(shared_ptr<int>sp1 = wp.lock()) { sp1.use_count(); }
+23. explicit：保证该构造函数不会被隐式调用(前）
+	noexcept:该函数不会抛出异常（后）,如果真的有异常外部也捕捉不到，将直接报错了
+	constexpr:该函数可以在编译期间求值(前）
+24.allocator::construct可使用任意构造函数
+	能够将内存的分配/释放和对象的构造/析构动作分离，从而实现一次分配内存，自由构建对象的目的
+	befor(placement new)
+		void* buffer = new char[sizeof(Tracer) * 5];	//申请内存
+		Tracer* t1 = new(buffer) Tracer();				//调用构造
+		Tracer* t2 = new(buffer + sizeof(Tracer)) Tracer(3);
+		t2->~Tracer();		//调用析构
+		t1->~Tracer();
+		delete[] buffer;	//释放内存
+	after(allocator)
+		allocator<Tracer> alloc;	//分配器
+		Tracer* tb = alloc.allocate(5);	//申请内存
+		alloc.construct(tb);
+		alloc.construct(tb + 1);
+		alloc.destroy(tb + 1);
+		alloc.destroy(tb);
+		alloc.deallocate(tb, 5);  //释放内存
+25.编译器自动生成的操作(6个默认函数）
+	两组中定义了任意一个，编译器就不会自动生成本组其他的函数了。如果还是希望编译器生成默认，可以通过=default来实现（第二组不是完整施行的）
+	一、默认构造函数
+		定义了构造函数，C++编译器就会认为默认初始化已经不能满足程序员的需求而不再生成默认的构造函数了
+		希望编译器生成默认构造函数，可以通过=default来实现。
+	二、拷贝构造函数 赋值运算符 移动构造函数 移动赋值运算符 析构函数 
+		如果析构函数中需要释放资源，那么其他的拷贝控制成员也需要进行相应的处理。
+		浅拷贝就可以满足需求使用=default
+	Tracer() = default;
+	Tracer(const Tracer& t) = default;
+	Tracer& operator=(const Tracer& t) = default;
+	Tracer(Tracer&& t) = default;
+	Tracer& operator=(Tracer&& t) = default;
+	~Tracer() = default;
+26.使用=delete阻止拷贝类对象
+27.用移动类对象代替拷贝类对象
+	string s1("hello world");
+	string s2 = std::move(s1);
+28.自己实现移动构造函数和移动赋值运算符。 
+	移动构造函数一般不会抛出异常  Tracer(Tracer&& t) noexcept{}
+29.移动迭代器
+	Tracer t[4] = {};
+	vector< Tracer> t1{make_move_iterator(t), make_move_iterator(t + 4) };
+30.引用限定成员函数
+	void Set() & {} 这个函数只对左值有效
+	void Get() && {} 这个函数只对右值有效
+	Tracer t;	t.Set();	Tracer().Get();
+	如果需要同时添加的话,引用限定符需要在const之后，noexcept之前
+31.function类模版   #include <functional>
+	虽然每个操作的类型并不相同，但是由于它们拥有相同的调用形式，通过引入function类模版，可以像同一种类型一样使用它们
+	函数指针,函数对象lamda表达式和参数绑定。
+	int add(int a, int b){}
+	auto minup_op = [](int a, int b){};
+	struct multiply_op{
+		int operator*(int a,int b){}
+		}
+	int devide(int a, int b, bool check0){}
+	auto dev_op = bind(devide, _1, _2, false);
+	  map<string, function<int(int,int)>> op =
+	  { {"+", add}, {"-", minup_op}, {"*", multiply_op}, {"/", dev_op}  };
+	  op["+"](1, 2);
+32.explicit类型转换运算符
+	隐式类型转换运算符 explicit operator double() const {  }
+33.override  当编译器无法在基类中找到相同签名的虚函数的时候，就会产生编译错误。确保是覆盖而非重载
+34.final; 基类声明了纯虚函数，派生类就必须覆盖这个函数。 在函数声明的后面添加final说明符,禁止覆盖的手段
+35.继承的构造函数  using Test::Test;  继承基类所有构造函数
+36.std::move的功能是使用static_cast将T，T&，T&&全都显式转换为T&&。
+37.标准库forward函数
+	完美转发实现了参数在传递过程中保持其值属性的功能
+	void add(int&& v){}
+	void executel(int&& v) 
+	{  add(v); //报错int无法转换为int&&类型 此时v已为左值
+	   add(std::forward<int>(v)); //保持其右值属性
+	}
+38.可变参数模板(variadic template)
+	template<typename T>
+	void writeLog(cont T& t){ }
+	template<typename T, typename... Args>
+	void writeLog(const T& t, const Args... rest)
+	{  writeLog(t);
+	   writeLog(rest...);
+	}
+	sizeof……运算符
+		sizeof...(Args);
+	可变参数模板参数转发
+		std::forward<Args>(rest)...
+39.标准库tuple模板
+	tuple<string, int, float, double> tu{ "hello", 1, 2.0f, 3.0};
+	auto tu = make_tuple(1,"world");
+	cout << tuple_size<decltype(tu)>::value << endl;
+	cout << typeid(get<0>(tu)).name() << endl;
+	cout << typeid(tuple_element<3, decltype(tu)>::type).name() << endl;
+40.bitset
+	bitset<8> b;   cout << b.to_string() << endl;
+	是否存在1，b.any(); 
+	是否都是1，b.all();
+	是否没有1，b.none();
+	长度，b.size();
+	取指定位状态，b.test(1)，b[0];  //从后往前数位数
+	置位，b.set(2);	// 第2位设为1
+	全部置位，b.set();
+	复位，b.reset(3);	//第3位设为0
+	全部复位，b.reset();
+	翻转，b.flip(3);	//第3位取反
+	全部翻转，b.flip();
+41.std::tie(结构化绑定)
+	multimap<string, int>::iterator = lower, upper;
+	std::tie(lower, upper) = mmp.equal_range("four");
+	c++17 auto [lower, upper] = mmp.equal_range("four");
+42.字面量,固定常量("hello", 1, 0.0)
+	自定义字面量,可以使用 operator"" 后缀 来将用户提供的字面量转换成实际的类型
+	length operator"" _m(long double v){}
+	length operator"" _cm(long double v){}
+	1.0_m + 10.0_cm
+43.二进制字面量, unsigned mask = 0b111000000;
+44.数字分隔符,C++14 开始，允许在数字型字面量中任意添加 ' 来使其更可读
+	unsigned mask = 0b111'000'000;
+	ouble pi = 3.14159'26535'89793;
+
+
+C++17 引入的 optional 返回对象用
+variant 就是一个安全的 union
+expected
+Herbception
+	
+--------------------扩展
+重载	发生在一个类中，函数名相同，参数必须不同，返回值可以不同
+覆盖	基类函数必须virtual修饰，函数名参数相同
+隐藏	1.基类函数没有virtual修饰，函数名参数相同； 2.函数名相同，参数不同，有没有virtual都将隐藏
+	隐藏发生，但需要用到基类函数，可在派生类中 using base::fun; 调用时 sub.base::fun();
+输出类名  cout << typeid(Type).name();
+printf_s	auto str = printf_s("%d,%s", 1, "one");		输出屏幕
+sprintf_s	auto len = sprintf_s(buff, 100, "%d", 1);	输出buff

@@ -1,0 +1,47 @@
+copy：将一个容器的内容复制到另一个容器。
+remove：在容器中删除一个元素。
+random_shuffle：随机打乱容器中的元素。
+fill：用某个值填充容器。
+
+list
+reverse()	前后颠倒
+void remove (const T & val)	删除和 val 相等的元素
+remove_if	删除符合某种条件的元素
+void unique()	删除所有和前一个元素相等的元素
+void merge(list <T> & x)	将链表 x 合并进来并清空 x。要求链表自身和 x 都是有序的
+void splice(iterator i, list <T> & x, iterator first, iterator last)	在位置 i 前面插入链表 x 中的区间 [first, last)，
+并在链表 x 中删除该区间。链表自身和链表 x 可以是同一个链表，只要 i 不在 [first, last) 中即可
+_list.sort(std::less<int>());
+_list.sort(std::greater<int>());
+
+accumulate定义在#include<numeric>中，作用有两个，一个是累加求和，另一个是自定义类型数据的处理
+accumulate带有三个形参：头两个形参指定要累加的元素范围，第三个形参则是累加的初值。
+int sum = accumulate(vec.begin() , vec.end() , 42);
+可以使用accumulate把string型的vector容器中的元素连接起来
+string sum = accumulate(v.begin() , v.end() , string(" "));
+
+#include <numeric>
+int SumSquares(int total, int value)
+{
+    return total + value * value;
+}
+int result = accumulate(v.begin(), v.end(), 0, SumSquares); //平方和
+
+关联容器（都是 键的操作） 提供一个排序的函数对象 默认less
+find(k) 可以找到任何一个等价于查找键 k 的元素
+lower_bound：查找某个下界。第一个能插的位置 找到第一个不小于查找键 k 的元素（!(x < k)）
+upper_bound：查找某个上界。最后一个能插的位置 找到第一个大于查找键 k 的元素（k < x）
+equal_range：同时查找上界和下界。
+count：计算等于某个值的元素个数。
+
+无序关联容器(unordered_set, unorded_map, unorded_multiset, unorded_multimap)
+主要的区别就在于它们是“无序”的,提供一个可以计算哈希值的函数对象 默认标准的 hash 函数对象及其特化
+
+优先队列 priority_queue<Type, Container, Functional>
+	Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector
+	默认是降序队列, 大顶堆
+	priority_queue<int> a; 等同于 priority_queue<int, vector<int>, less<int> > a; 最大的数值会出现在容器的“顶部”
+	//升序队列，小顶堆
+	priority_queue <int,vector<int>,greater<int> > q;
+	
+std::array<char, 8> mykey_t;

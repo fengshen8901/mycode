@@ -1,0 +1,123 @@
+2-18  放技能
+0-11  移动
+@notice |E:3,50002,7002,128,65,&U:&C:0x00FF00&T:前往护送|		
+
+@instantMove 90 50	--瞬间移动到一个点去
+@setattr 4 10000000
+@crosssealdream 1
+@sealdream 1
+@addzhuanshengexp 7
+@sealdreamfb 3
+@realRech 100 1
+@killMon
+@acceptquest 1000 100015
+@gmTask 1000 100008
+@gmTask 1000 100060
+@openact 4
+@rsfranking
+-----------------------------------------------------
+local award = utils.table_clone(dayConfig.rewards)
+LActor.sendTipmsg(actor, "请清理背包")
+
+ItemPool::instance().CreateItem
+//获取今天凌晨的时间
+System.getToday()
+
+repeat
+until true
+
+//发送消息
+	ttInvalidTmType = -1, 	// 无效的Tipmsg类型
+	ttTipmsgWindow = 1, 	//左侧聊天栏里，飘了一下
+	ttScreenCenter = 2, 		//屏幕最中央及左侧，飘了一下(2号公告栏)
+	ttDialog = 4,     		//弹出框
+	ttHearsay = 8,	 	// 屏幕中央，向上飘的文字提示
+	ttMessage = 16,		//向上飘的文字提升，
+	ttWarmTip  = 32,  		//温馨提示
+	ttGmTip = 64,		// Gm提示信息
+	ttChatWindow = 128, 	//左侧聊天栏里，飘了一下
+	ttScreenMarquee = 256, 	//屏幕中央的走马灯(1号公告栏)
+	ttScreenCenterDown = 512,  	//屏幕中央下方，像歌词那样的效果
+	//ttMaxTmType,		// 最大Tipmsg类型
+LActor.sendTipmsg(actor, LAN.ScriptTips.tra004) //, ttWarmTip)
+broadCastNotice(noticeId, LActor.getName(actor))
+noticemanager.broadcastNotice(1, ScriptTips.coy007)
+noticemanager.broadcastOpenActivity(ConvoyBaseConfig.doubleNotice) 
+LActor.sendTipWithId(actor, GuildConfig.nameNoticeId)
+
+local lenght = table.getnEx(list)
+
+local hfuben = LActor.getFubenHandle( actor )	
+local ins = instancesystem.getInsByHdl(hfuben)
+
+print("--" .. utils.t2s(data))
+
+--所有人发消息
+local npack = LDataPack.allocPacket()
+if npack == nil then
+	return
+end
+local var = getGlobalData()
+LDataPack.writeByte(npack,Protocol.CMD_GuildBattle)
+LDataPack.writeByte(npack,Protocol.sGuildBattleCmd_Open)
+makeOpenData(npack)
+System.broadcastData(npack)
+----------------------------------------------------------
+--------------------------------------------------------------
+svn
+feng.lai
+lf123123
+https://192.168.1.124/svn/h5gy/
+
+sql
+user=mmo_admin
+password=MGU3ZjM2NjcwMGEy
+
+192.168.20.123:22	aa123456
+106.52.198.105 mmo_admin  2433     MGU3ZjM2NjcwMGEy 
+
+
+--------------------------------------------------------------
+local Y,M,d,h,m = string.match(baseCfg.openTime, "(%d+)%.(%d+)%.(%d+)")
+if Y == nil or M == nil or d == nil then
+    return nil
+end
+return System.timeEncode(Y, M, d, 0, 0, 0)
+
+跨服竞技开始时间,与跨服boss开启时间
+						 
+asyncworker.lua getUrlContent(192.168.1.97, 8080, "/gmcallback.jspkey=d30346a96b9538c60429fd31d7d5ecaf&cmdid=1&serverid=11&ret=true")				 
+
+
+
+rsf			重新加载脚本
+gc			释放内存
+resettianti
+addtrainexp	actor_id(String), exp(String)
+restRechargeRecord
+addstoreintegral actor_id(String), count(String)
+exportranking
+setActorDataValid actor_id(String)	--修复因为缓存而不能登陆的玩家
+shutup actor_id(String), time(String)	禁言
+releaseshutup actor_id(String)	解除禁言
+buyprivilegemonthcard actorid, cardType(1-钻石卡, 2-星耀卡, 3-王者卡)
+buyprivilegemonthcard actor_id(String)
+peakdost	st(String)	巅峰赛季指令
+addChapterRecord	关卡(遭遇战)相关
+sendGlobalMail 全局邮件	head context item_str
+sendMail head context actorid item_str
+addnotice 公告 content  type  startTime  endTime  interval
+delAllNotice 删除所有公告
+kick actor_id(String) 踢玩家下线
+repairKnighthood actor_id 完成勋章任务
+monupdate	加载(data/addtmp.lua) 并重新加载脚本
+resetfame actor_id 重置(遭遇战)相关
+setGuildUpgradeTime guildid(String), time(String)
+setLoginactivate flag(int) 登录奖励
+itemupdate	加载(data/addtmp.lua) 并重新加载脚本
+hfClearData --合服清数据
+changeWZClearData --切换战区清数据
+hfClearBelongData 	--清除决战沙城归属信息
+ogb --开帮派战
+devilbossopen	--开魔界入侵
+giveCscomsumeRankAward 

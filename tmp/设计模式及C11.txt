@@ -1,0 +1,70 @@
+8大面向对象设计原则
+23种设计模式
+
+“组件协作”模式
+一、模板方法（template method）
+	父类指针指向子类
+	各种子类对象  -->  父类指针集合（list or vector）
+二、策略模式（strategy）
+	利用多态代替else if
+	父类指针（指向某种子类对象）调用处理函数
+三、观察者模式（observer/event）
+	subject(attach detach notify)    observer(update)
+
+“单一职责”模式
+四、装饰模式（Decorator）  采用组合而非继承
+	is a(继承），has a(拥有）stream   fileStream  (decorator)--cryptoStram
+五、桥模式（Bridge）
+	装饰模式的基础上，分两个基类 并且 has a 
+	将抽象部分（业务功能）与现实部分（平台实现）分离
+ 
+“对象创建”模式
+六、工厂模式（Factory method）
+	工厂基类 -- 具体工厂类（n个） 抽象类 -- 具体类 
+
+七、抽象工厂（Abstract Factory）
+	工厂基类 -- 具体工厂类（n个） 工厂可创建一系列相互依赖的对象
+
+六、原型模式（Prototype）
+	合并工厂基类，抽象类  类中克隆自己
+
+七、构建模式（Builder）
+	稳定的构建步骤，在基类调用（House）  
+
+“对象性能”模式
+八、单件模式（Singleton）
+	//双检查锁，避免内存读写reorder不安全
+	Singleton* Singleton::getInstance() {
+    		Singleton* tmp = m_instance.load(std::memory_order_relaxed);
+    		std::atomic_thread_fence(std::memory_order_acquire);//获取内存fence
+   		 if (tmp == nullptr) {
+      		 	 std::lock_guard<std::mutex> lock(m_mutex);
+      		 	 tmp = m_instance.load(std::memory_order_relaxed);
+       			 if (tmp == nullptr) {
+          		  		tmp = new Singleton;
+          		  		std::atomic_thread_fence(std::memory_order_release);//释放内存fence
+          		  		m_instance.store(tmp, std::memory_order_relaxed);
+     		 	  }
+   		 }
+   		 return tmp;
+	}
+
+九、享元模式（Flyweight）
+	运用共享技术有效地支持大量细粒度的对象
+
+“接口隔离”模式
+十、门面模式（Facade）
+
+十一、代理模式（Proxy）
+ 
+十二、适配器（Adapter）
+
+十三、中介者（Mediator）
+
+“状态变化”模式
+十四、状态模式（State）
+
+十五、备忘录（Memento）
+
+“数据结构”模式
+十六、组合模式（Composite）

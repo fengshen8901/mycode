@@ -1,0 +1,6 @@
+const 成员函数
+inline
+提供了移动构造函数而没有手动提供拷贝构造函数，那后者自动被禁用
+	template<typename U>
+	smart_ptr(smart_ptr<U>&& other) noexcept 模板构造,不被编译器看作移动构造函数，因而不能自动触发删除拷贝构造函数的行为
+元素类型没有提供一个保证不抛异常(noexcept)的移动构造函数，vector 通常会使用拷贝构造函数

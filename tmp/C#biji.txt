@@ -1,0 +1,105 @@
+类的成员：
+常量：表示与该类相关联的常量值。 
+字段：即该类的变量。 
+类型：用于表示一些类型，它们是该类的局部类
+方法：用于实现可由该类执行的计算和操作。 
+属性：用于定义一些命名特性，通过它来读取和写入相关的特性。 
+事件：用于定义可由该类生成的通知。 
+索引器：使该类的实例可按与数组相同的（语法）方式进行索引。 
+运算符：用于定义表达式运算符，通过它对该类的实例进行运算。 
+实例构造函数：用于规定在初始化该类的实例时需要做些什么。 
+析构函数：用于规定在永久地放弃该类的一个实例之前需要做些什么。 
+静态构造函数：用于规定在初始化该类自身时需要做些什么。
+
+readonly 只读字段，可在构造函数中改值
+const 字段,在类的外部访问不到
+
+析构函数与Finalize函数 ，只能存在一个 Finalize只释放非托管资源
+Dispose方法，释放托管和非托管资源
+
+ class FileSystem
+    {
+        public FileSystem() { /*打开一个文件*/}
+        ~FileSystem() { this.Close();/*释放非托管资源*/}
+        public void Close()
+        {
+            /*关闭一个文件*/
+        }
+        public void Dispose()
+        {
+            this.Close();/*释放非托管资源*/
+	   /* 释放托管资源*/
+            GC.SuppressFinalize(this);
+        }
+    }
+
+GC.Collect();//手动清理垃圾，尽量不要游戏中，会造成卡顿，可在游戏加载或其它处调用
+
+ static Teacher() //静态构造函数（第一次创建该类对象时调用一次）
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);//随机种子
+            counter = random.Next(0, 1000);//随机范围
+        }
+
+Console.WriteLine("{0:0.00}",avg);//保留两位小数输出
+string s = avg.ToString("0.00");
+avg = Convert.ToDouble(s);
+
+abstract 作为基类，不能实例  修饰类
+sealed 不能派生，封口
+
+abstract<->override
+virtual <->override
+
+
+delegate 委托机制（unity)
+
+params关键字指明一个可变的参数数组。
+数组参数的类型必须是一维数组，而且必须是形参表中的最后一个参数。
+数组参数始终是值传递方式进行传递，不能将params同ref和out组合。
+public double AVG( params int[ ] Nums)
+{	  
+	int Sum=0;  
+	int Count=0; 
+	foreach(int n in Nums) 
+	{	     
+		Sum+=n;     
+		Count+=1;   
+	}   
+	 return (Sum/Count);
+}
+Class1 a = new Class1();
+double d = a.AVG(13,27,33,25,78);
+
+属性:(字段名用小写,属性名用大写开头)
+创建一个属性包括两步：1.声明一个字段来存储属性值2.编写一个属性声明，提供访问接口
+[访问修饰符] 类型名  属性名
+{  get   {  return  字段;   }   
+  set   { 私有字段 = value; } //value是关键字
+ }
+
+索引器：（参数化成员属性）
+与成员属性不同：它可以接受1个或多个参数，使用this作为索引器的名字
+[访问修饰符] 数据类型 this[数据类型 标识符]
+{	
+	get{};	
+	set{};
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

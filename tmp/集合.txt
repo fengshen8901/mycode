@@ -1,0 +1,320 @@
+树,图, 广度优先,深度优先(按层遍历) 1+
+string ,stl， 栈,队列  3
+
+c++与lua
+linux make cmake 编译器 MSVC,GCC,Clang,调试,dump
+google_log, spdlog,Easylogging++   3
+
+算法
+设计模式
+
+进程间通信
+	管道(pipe) 
+		fork函数用来“复制”一份主程序，即创建主进程的子进程(在父进程中，fork返回新创建子进程的进程ID，在子进程中，fork返回0)
+		fork是将主进程的资源全部拷贝了一份给子进程，两个进程的资源是独立的，互不影响,(子进程从fork函数后开始运行,包括fork,因为会返回0)
+	命名管道(FIFO)
+	消息队列(msg)
+	信号量(sem)
+	共享内存(shm)
+	信号(Signal)
+	套接字(Socket)
+TCP,Socket, packet,包合并，IO线程,内存池 3
+
+线程,锁,(线程间通信,原子atomic)
+
+redis, 非关系型数据库,键值对
+项目
+
+c++与lua
+linux  GCC  调试
+
+
+算法
+设计模式
+TCP,Socket, packet,包合并，IO线程,内存池 3
+项目
+mysql
+
+生成过程：从源代码到可执行文件（.exe）三个步骤：
+1.预编译：  宏替换，吸收所有的.h文件，根据预编译指令（条件指令）抛弃部分代码
+2.编译：对每个CPP文件进行语法性错误检查，并生成为若干个XXXX.obj(中间过程文件）
+3.链接：将若干个.obj整合为一个.obj，再次进行错误检查，(嵌入资源清单等其他信息）生成XXXX.exe
+
+宏替换、宏展开 (完全替换)
+
+-------------------------------------------------------------
+随机
+rand()  0~RAND_MAX
+需加随机种子，否则每次随机一样
+加头头文件#include <time>
+srand(unsigned ( time (NULL)));
+rand()%(n-m+1)+m;
+
+STL中的函数random_shuffle()用来对一个元素序列进行重新排序（随机的），函数原型如下：
+template<class RandomAccessIterator>  
+   void random_shuffle(  
+      RandomAccessIterator _First, //指向序列首元素的迭代器  
+      RandomAccessIterator _Last  //指向序列最后一个元素的下一个位置的迭代器  
+   ); 
+   
+-------------------------------------------------------------位运算  转为二进制（0为假，1为真）
+&	有假即为假
+|	有真即为真
+^	相同为假，不同为真
+~	非，取反
+<<	左移，低位补0	  用作乘法，移几位，乘2的n次幂
+>>	右移，高位补符号位	用作除法，移几位，除2的n次幂
+
+运算符重载：为某些运算符赋以全新的含义，实现特殊功能
+
+可重载运算符几乎包含了C++的全部运算符集，有几个例外不可重载：
+1.限定符‘.’和‘::’
+2.条件运算符‘? :’
+3.取长度运算符‘sizeof’
+
+运算符重载是一个特殊函数定义过程，总是以  operator <运算符>作为函数名
+operator bool(){}
+operator double(){}
+
+1.重载为类的函数成员
+2.重载为类的友元函数
+
+-------------------------------------------------------------
+输入输出(!!format)
+printf_s("%3.2f \n", n);
+cin >> hex >> n; cout << hex << n;
+cin >> oct >> n;
+cin >> dec >> n;
+读一行
+std::string line = "";
+while (getline(std::cin, line))
+{
+	std::cout << line << std::endl;
+}
+-------------------------------------------------------------
+extern（全局作用域） 关键字，用法： 
+	1. 声明为外部的变量（extern int a   推迟技术（到其他.cpp找int a））
+	2. 以C语言的形式编译｛｝中的代码   
+		extern 'C'
+		{ 
+			代码
+		｝
+
+static（文件作用域）	的三条作用总结：
+最主要功能是隐藏（多文件时隐藏函数，变量名，可在其它文件中现次使用名，不会重定义），
+其次因为staitc变量存放在静态存储区，
+所以它具备持久性和默认值为0；
+
+-------------------------------------------------------------
+auto （关键字）自动数据类型推导，必须初始化；所有基本数据类型，指针（不能定义数组）
+ auto a=10;
+ auto p=&a;
+decltype 查询变量或表达式的类型
+ decltype(a) b=a;定义一个a类型的变量b等于a 
+
+序列式的for循环
+输出数组:  for( auto element: iArray)
+		cout<<element<<endl;
+
+Lambda (匿名函数）
+[函数对象参数](操作符重载函数参数）->返回值类型{函数体｝
+[=](int a,int b)-> int {return a+b;}
+
+-------------------------------------------------------------
+string
+  str.size() <=> str.length() 返回 string::size_type 类型(unsigned int)  字符串的实际长度(不包括'\0')
+  string str = "hello " + "world";  //错误，必须有一个是string对象 string("hello ")
+赋值  s3.assign(s1);
+比较  s1.compare(s2);  n = s1.compare(1, 2, s2, 0, 3);  //比较s1的子串 (1,2) 和s2的子串 (0,3)
+求子串 (n, m)  string s2 = s1.substr(2, 4);  s2 = s1.substr(2); //到 string::npos
+交换  s1.swap(s2);
+查找子串和字符
+	find(rfind)：从前往后查找子串或字符出现的位置。
+		if ((n = s1.find('u')) != string::npos) //查找 u 出现的位置  s1.find("Source", 3)
+        cout << "1) " << n << "," << s1.substr(n) << endl;
+	find_first_of(find_last_of)：从前往后查找何处出现另一个字符串中包含的字符
+		if ((n = s1.find_first_of("ceo")) != string::npos)  
+        //查找第一次出现或 'c'、'e'或'o'的位置  s1.find_last_of('e')
+        cout << "4) " << n << ", " << s1.substr(n) << endl;
+	find_first_not_of(find_last_not_of)：从前往后查找何处出现另一个字符串中没有包含的字符。
+		if ((n = s1.find_first_not_of("eou", 1)) != string::npos)
+        //从下标1开始查找第一次出现非 'e'、'o' 或 'u' 字符的位置
+        cout << "6) " << n << ", " << s1.substr(n) << endl;
+替换子串
+	string s1("Real Steel");
+	s1.replace(1, 3, "123456", 2, 4); //R3456 Steel
+	string s2("Harry Potter");
+	s2.replace(2, 3, 5, '0'); //HaOOOOO Potter
+	int n = s2.find("OOOOO");  //查找子串 "00000" 的位置，n=2
+	s2.replace(n, 5, "XXX"); //HaXXX Potter
+删除子串
+	s1.erase(1, 3);  //删除子串(1, 3)
+	s1.erase(5);  //删除下标5及其后面的所有字符
+插入字符串
+	string s1("Limitless"), s2("00");
+	s1.insert(2, "123");  //在下标 2 处插入字符串"123"，s1 = "Li123mitless"
+	s1.insert(3, s2);  //在下标 2 处插入 s2 , s1 = "Li10023mitless"
+	s1.insert(3, 5, 'X');  //在下标 3 处插入 5 个 'X'，s1 = "Li1XXXXX0023mitless"
+string 对象作为流处理
+	string src("Avatar 123 5.2 Titanic K");
+    istringstream istrStream(src); //建立src到istrStream的联系
+    string s1, s2;
+    int n;  double d;  char c;
+    istrStream >> s1 >> n >> d >> s2 >> c; //把src的内容当做输入流进行读取
+用 STL 算法操作 string 对象
+	sort(s.begin(), s.end());
+拼接性能 +=  append  stringstream  sprintf
+-------------------------------------------------------------
+volatile(关键字),易变的;变量不安全，你要到内存里面去操作，不要直接从寄存器取值。
+const int tmp = 100; //常量
+const int* p = &tmp;
+int* const q = const_cast<int*>(p); //去常属性
+*q = 200;
+// cout , tmp 100, *p 200, *q 200  由于优化,tmp直接取寄存器中值
+volatile const int tmp = 100; ... // tmp 200 
+
+try {
+     } 
+catch (std::exception) {
+     }
+
+静态成员变量需要定义
+	而不是初始化。两者的区别在于：初始化是赋一个初始值，而定义是分配内存。
+	静态成员变量在类中仅仅是声明，没有定义，所以要在类的外面定义，实际上是给静态成员变量分配内存
+-------------------------------------------------------------
+内存分配方式
+栈,函数内局部变量，函数执行结束时自动被释放.效率很高，但是分配的内存容量有限
+堆,new/delete,程序员控制.没有释放掉,程序结束后，操作系统会自动回收
+	自由存储区(malloc/free)
+全局/静态存储区,全局变量和静态变量被分配到同一块内存中
+常量存储区,存放的是常量，不允许修改(常量字符串等)
+
+内存对齐
+1.第一个数据成员放在offset为0的地方，以后每个数据成员的对齐按照#pragma pack指定的数值和这个数据成员自身长度中，比较小的那个进行
+2.在数据成员完成各自对齐之后，类(结构或联合)本身也要进行对齐，对齐将按照#pragma pack指定的数值和结构(或联合)最大数据成员长度中，比较小的那个进行
+(#pragma pack(n)作为一个预编译指令用来设置多少个字节对齐的,n的缺省数值是按照编译器自身设置，一般为8，合法的数值分别是1、2、4、8、16)
+
+类的大小
+空类的大小为1，因为空类可以实例化，实例化必然在内存中占有一个位置，因此，编译器为其优化为一个字节大小。
+vfptr（virtual function ptr）即虚函数表指针
+	只要含虚函数，一定有虚函数表指针，而且该指针一定位于类内存模型最前端
+多继承,继承类新添加的虚函数位于第一个父类虚函数表项后面(父类没有虚函数表项则在类内存模型最前端)
+虚拟继承,
+	不同环境下虚拟继承对类大小的影响
+		vs环境下,采用虚拟继承的继承类会有自己的虚函数表指针
+		gcc环境下及mac下使用clion,没有自己的虚函数表指针,共用父类的虚函数表指针
+	虚拟继承会给继承类添加一个虚基类指针（virtual base ptr 简称vbptr），其位于类虚函数指针后面，
+	成员变量前面，若基类没有虚函数，则vbptr其位于继承类的最前端
+	vfptr(self) vbptr member(self) vfptr(base) member(base)
+	
+类图
+  可见性（visibility）
+	‘+’ public
+	‘-’ private
+	‘#’ protected
+  参数的方向（parameter direction）
+	‘in’：用于输入的参数，get the value
+	‘out’：用于输出的参数， set the value
+	‘inout’：既可作为输入又可作为输出， get the value and set the value
+  类成员（变量或者函数）的类型
+	静态成员，下划线表示
+	纯虚函数，斜体
+  类关系
+	Assocation 关联 (knows a)  一个对象知道另一个对象的存在，该对象持有另一个对象的指针或者引用。 
+		X->Y // X类持有Y的一个指针，可据此调用Y中的成员方法
+	Dependency 依赖 (uses a)  当类Y与类X彼此独立，而类Y是类X成员函数的一个参数，或者X中成员函数的一个局部变量
+		X--->Y	
+	Aggregation 聚合 (has a)  一个类是另一个类的集合或者容器，但被包含的类与容器本身并不具备相同的生命期，即容器销毁时，其包含的内容未必
+		X◊->Y
+	Composition 组合 (has a)  是聚合（Aggregation）的增强版。组合和聚合的根本不同在于类与其所持有元素的是否具有相同的生命期,必须相同是一种组合关系
+		X◆->Y
+	Inheritance 继承 (is a)
+		x-◊Y
+	Class template
+  类模板
+	类模板意味着泛型类。
+		叠加,模板类在下,具体类型在上
+  关系的多重性（multiplicity）
+	‘0..1’， 无实例，或者1个实例
+	‘1’，只有一个实例
+	‘0..*’，
+	‘1..*’
+	
+-------------------------------------------------------------
+类型转换
+static_cast 
+	基类和子类之间的转换：其中子类指针转换为父类指针是安全的，但父类指针转换为子类指针是不安全的
+	不能进行无关类型（如非基类和子类）指针之间的转换
+dynamic_cast
+	必须有虚函数!!!,安全的基类和子类之间的转换
+reinterpret_cast
+	转换的类型必须是一个指针,仅重新解释类型，但没有进行二进制的转换
+const_cast
+	去掉类型的const或volatile属性
+-------------------------------------------------------------
+右值可以绑定到常左值引用的参数，如 const T&，但不可以绑定到非常左值引用（non-const lvalue reference）
+-------------------------------------------------------------
+
+原码
+原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值.
+[+1]原 = 0000 0001
+[-1]原 = 1000 0001
+
+反码
+正数的反码是其本身
+负数的反码是在其原码的基础上, 符号位不变，其余各个位取反.
+[+1] = [00000001]原 = [00000001]反
+[-1] = [10000001]原 = [11111110]反
+
+补码
+正数的补码就是其本身
+负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)
+[+1] = [00000001]原 = [00000001]反 = [00000001]补
+[-1] = [10000001]原 = [11111110]反 = [11111111]补
+-------------------------------------------------------------
+字节序
+大端模式(高位字节优先)，是指数据的高字节保存在内存的低地址中，而数据的低字节保存在内存的高地址中(这和我们的阅读习惯一致)
+小端模式(低位字节优先)，是指数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中
+如 0x12345678  大端: 0x12345678    小端: 0x78563412
+主机字节序，可能是小端模式的，也可能是大端模式的
+网络字节序都是大端模式
+h代表host,n代表network，s代表short，l代表long
+主机字节序转换成网络字节序
+uint32_t htonl(uint32_t hostlong);
+uint16_t htons(uint16_t hostshort);
+网络字节序转换成主机字节序
+uint32_t ntohl(uint32_t netlong);
+uint16_t ntohs(uint16_t netshort);
+本机大小端字节序判断:
+	cout << std::hex;
+	int val = 0x11223344;
+	int tmp = (int)*((char*)&val);
+	cout << tmp << endl;
+	if (tmp == 0x11)	
+		cout << "大端" << endl;	
+	else if (tmp == 0x44)	
+		cout << "小端" << endl;
+-------------------------------------------------------------
+
+
+core文件不生成原因
+先经过下面命令设置：
+mkdir -p /home/data/corefile
+chmod 777 /home/data/corefile
+echo "ulimit -S -c unlimited > /dev/null 2>&1" >> /etc/profile
+source /etc/profile
+长度
+echo "1" > /proc/sys/kernel/core_uses_pid
+echo "/data/h5gy/corefile/core-%e-%p_%t" >/proc/sys/ kernel/core_pattern
+echo "1" > /proc/sys/fs/suid_dumpable
+如果还不会生成core文件,检查以下四种情况：
+1、首先检查是否ulimit -c 设置有效
+ulimit -c
+2、检查core位置是否正确
+cat /proc/sys/kernel/core_pattern
+3、检查core的目录当前用户是否具有可写权限
+ll / | grep corefile，查看权限
+4.查看生成core文件的路径是否正确，也就是说是否有该文件夹
+
+
+

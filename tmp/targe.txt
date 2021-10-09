@@ -1,0 +1,31 @@
+unity, lib, dll, dump,   SetUnhandledExceptionFilter(DefaultUnHandleExceptionFilter);
+$(Platform)\$(Configuration)\     --x64\debug
+
+
+cocos --javescript
+unity -- c#
+ue4
+
+python
+java
+php
+
+熟悉Unity3D引擎操作以及引擎架构，熟练使用Unity NGUI等插件。
+
+3.熟悉手机游戏开发的适配和优化，了解U3D和手机系统原生语言的交互。
+
+4.熟悉http和socket等网络通信，能与后台制定通信协议
+
+熟悉图形渲染原理； 
+
+  6.  熟悉热更新方法； 
+
+精通C#、lua（ 1年及以上开发经验），良好的代码编写习惯；
+
+熟悉UGUI或NGUI框架；；
+
+4. 精通DoTween或类似插件完成各种复杂的动画表现；
+
+掌握基础Shader开发技术
+
+https://121.40.229.239/svn/Dev/trunk

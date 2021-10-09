@@ -1,0 +1,223 @@
+
+new 申请内存调用构造函数,返回对象指针  malloc 只申请内存返回void指针
+delete 调用析构函数,释放内存		free 只释放内存
+!!!
+重载输入,输出
+省if判断(利用位运算,符号位)
+
+!!!
+常量表达式	值固定并且在编译过程就能确定计算结果的表达式
+constexpr 修饰常量表达式(变量,函数),加强初始值的检查,计算的时机从运行时提前到编译时，比宏定义效率更高。
+
+!!!
+范围for  条件,支持v.begin()/v.end()或者是begin(v)/end(v)并返回一个迭代器,STL中的容器都满足
+int　array[]{1,2,3,4};
+int　sum=0;
+for(int a : array){　sum+=a; }
+
+int matrix[10][10];
+int number=1;		//int (*row)[10] = begin(matrix)
+for(auto row = begin(matrix); row != end(matrix); ++row){
+　　for(auto data = begin(*row); data != end(*row); ++data){
+　　*data = number++;
+}
+
+!!!
+使用initializer_list实现可变参数函数
+std::initializer_list<T> vlist{2,2,3};
+除了不能修改vlist中的值以外，可以像一般的list一样使用。
+template<typename T>
+void output(std::initializer_list<T> lst){
+	for (auto &msg : mlstsg){
+		cout << msg << endl;
+	}
+}
+
+!!!
+返回类型后置
+template<typename T1, typename T2>
+auto add(T1 a, T2 b) -> decltype(a+b)
+{ return a + b; }
+返回一个数组（可以计算维度的）指针
+int arr[10]{};
+int (*GetResultArr(int mode))[10]
+{ return &arr; }
+---
+using arr10 = int[10]
+arr10* GetResultArr(int mode){}
+--
+auto GetResultArr(int mode) -> int(*)[10]
+{}
+--
+auto pArr = GetResultArr(1);
+auto length = sizeof(*pArr)/sizeof(**pArr);
+
+!!!
+添加了有参数的构造函数,编译器就不再生成缺省的构造函数,可使用=default生成默认构造函数
+
+委托构造函数
+class Test {
+public:
+	Test():Test(0,0)
+	{	}
+	Test(int _a, int _b) :a(_a), b(_b)
+	{	}
+private:
+	int a;
+	int b;
+};
+
+虚析构函数,确保父类指针指向子类对象,析构时调用子类析构
+explicit：保证该构造函数不会被隐式调用
+noexcept:该函数不会抛出异常，(确定不会抛出或在此函数内部捕捉了异常)
+	noexcept可接受一个bool类型(表达式)的参数,实参为true则说明该函数不会抛出异常，反之则说明该函数可能抛出异常
+constexpr:该函数可以在编译期间求值（可以参考前面的文章）。
+
+移动构造函数通常应该是noexcept
+Tracer(Tracer&& t) noexcept
+	:m_str(std::move(t.m_str))
+{}
+即使try ... catch也捕获不到异常
+
+!!!
+insert方法
+添加单个元素				tmp.insert(pos, i)
+填充多个元素				tmp.insert(pos, n, val) / tmp.insert(pos, begin(), end())
+以移动方式插入数据		tmp.insert(pos, std::move(val))
+支持initializer_list		tmp.insert(pos, {val1, val2})
+
+emplace和emplace_bak
+
+capacity：取得容器的容量。
+size：取得已经保存在容器中数据的个数。
+reserve：分配至少可以容纳指定数量元素的内存空间。
+shrink_to_fit：释放多余的内存空间，只保留可以容纳容器中数据的最小内存。这个请求不一定总会被响应。
+resize(10,2); //将a的现有元素个数调至10个，多则删，少则补，其值为2
+
+!!!
+string的数值转换函数
+stoi：string 到 int
+stol: string 到 long
+stoll：string 到 long long
+stoul：sting 到 unsigned long
+stoull：string 到 unsigned long long.
+stof：string 到 float
+stod：string 到 double
+stold：string 到 long double.
+第二个参数,用于返回数值之后下一个字符的位置(连续转换)
+第三个参数,指定转换的基数 stoi(hex,nullptr,16);
+
+!!!
+可变lambda(mutable)
+找到第n个及格成绩
+intcounter=2;
+auto iter = find_if(score.begin(),score.end(),
+　　　　[counter](int v) mutable {
+　　　　　return(v>=60)&&(--counter==0);
+　　　　});
+由于是值捕获，处于lambda表达式外面的counter值依然不会改变。
+如果希望连外面的counter一起修改，使用引用捕获即可
+
+!!!
+参数绑定
+bool istarget(conststring& s,int sz){ return s.size()<sz; }
+auto isTarget=bind(istarget,_1, 2); //_1：占位符，_1代表isTarget被调用时的接受的第一个实参
+find_if(score.begin(),score.end(), isTarget)
+
+!!!
+关联容器, map中保存的是关键字-值的组合，而set中只保存关键字
+有序, map和set中的关键字不允许重复，已存在就覆盖。关键字可以重复 multimap和multiset。
+无序(效率更高), unordered_map,unordered_set,unordered_multimap,unordered_multiset
+
+!!!
+智能指针shared_ptr
+shared_ptr的reset( )函数的作用是将引用计数减1
+shared_ptr<string> p = make_shared<string>("hello");
+string* p1 = p.get(); //获取裸指针
+智能指针unique_ptr, 独占,不和其他的分享,只能支持右值引用的赋值
+智能指针weak_ptr, 不会控制所指向对象的生命周期 shared_ptr<string> p = weakptr.lock();
+
+!!!
+allocator(内存分配器)
+	std::allocator<int> all;
+	int* pHead = all.allocate(10);//申请内存
+	all.construct(pHead);	//调用无参构造
+	all.construct(pHead+1, 88);	//调用有参构造 int* p = new(pHead) int(88);
+	int* p = pHead + 1;	
+	cout << *p << endl;
+	all.destroy(pHead + 1);//调用析构
+	all.destroy(pHead);
+	all.deallocate(pHead, 10);//释放内存
+
+!!!
+移动迭代器
+Tracer src[4] = { "a", "b", "c", "d"};
+allocator<Tracer> alloc;
+auto dest = alloc.allocate(4); //malloc(4*sizeof(Tracer));
+uninitialized_copy(make_move_iterator(begin(src)), make_move_iterator(end(src)), dest);
+//src内存将被移交
+
+!!!
+function类模版
+4类可调用对象:函数，lamda表达式，函数对象和参数绑定
+function<int(int,int)> op = xxx;
+
+!!!
+override 覆盖,当编译器无法在基类中找到相同签名的虚函数的时候，就会产生编译错误。
+纯虚函数(子类必须覆盖), final(子类禁止覆盖)
+class base
+{ public:
+	virtual void fun1() {}
+	virtual void fun2() = 0;
+	virtual void fun3() final {}
+};
+class sub1:public base
+{public:
+	void fun1() override {}
+	void fun2() override {}
+	//void fun3() override {} //编译报错
+};
+
+!!!
+继承的构造函数
+class CRect
+{ 
+public: 
+	CRect(){}
+	CRect(int a, int b){}
+}
+class SubCRect: public CRect
+{
+public:
+	using CRect::CRect; //可继承全部构造 SubCRect tmp{1,2};
+}
+
+!!!
+可变长参数
+指定enum的大小(默认int, sizeof(a) = 4)
+enum class a : bool
+{ isa, isb };
+
+!!!
+template<typename T>
+void MyPrint(const T& a)
+{
+	cout << a << endl;
+}
+template<typename T, typename... Args>
+void MyPrint(const T& a,  const Args&... args)
+{
+	//auto size = sizeof...(args);  参数个数
+	cout << a << endl;
+	MyPrint(args...);	
+}
+//MyPrint(1, "hello", 2.3f, 2.3, "world");
+template<typename T>
+void MyPrint(const std::initializer_list<T>& args)
+{
+	for (auto it = args.begin(); it != args.end(); ++it)
+	{
+		cout << *it << endl;
+	}
+}
+//MyPrint({ 1,2,4,2 }); 类型必须相同
