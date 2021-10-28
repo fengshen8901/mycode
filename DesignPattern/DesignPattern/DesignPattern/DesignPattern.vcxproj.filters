@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="策略模式">
+      <UniqueIdentifier>{202577d7-8529-4a93-8f22-059a1d034f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="装饰者模式">
+      <UniqueIdentifier>{b4ed572a-e647-4341-a207-cdcd4ea21041}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DesignPattern.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Duck.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyBehavlor.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="QuackBehavlor.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyHigh.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyNoWay.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="QuackG.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="QuackJ.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="QuackMute.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="RedHeadDuck.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="GreenHeadDuck.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+    <ClCompile Include="DuckTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Beverage.cpp">
+      <Filter>装饰者模式</Filter>
+    </ClCompile>
+    <ClCompile Include="HouseBlend.cpp">
+      <Filter>装饰者模式</Filter>
+    </ClCompile>
+    <ClCompile Include="DarkRoast.cpp">
+      <Filter>装饰者模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CondimentDecorator.cpp">
+      <Filter>装饰者模式</Filter>
+    </ClCompile>
+    <ClCompile Include="Milk.cpp">
+      <Filter>装饰者模式</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocha.cpp">
+      <Filter>装饰者模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CoffeeTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Duck.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyBehavlor.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="QuackBehavlor.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyHigh.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyNoWay.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="QuackG.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="QuackJ.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="QuackMute.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="RedHeadDuck.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="GreenHeadDuck.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="DuckTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Beverage.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="HouseBlend.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="DarkRoast.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CondimentDecorator.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Milk.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocha.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CoffeeTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
