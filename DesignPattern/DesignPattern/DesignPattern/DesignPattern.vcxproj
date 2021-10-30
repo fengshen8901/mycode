@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="Beverage.cpp" />
     <ClCompile Include="CoffeeTest.cpp" />
+    <ClCompile Include="ConcreteObs.cpp" />
+    <ClCompile Include="ConcreteSub.cpp" />
     <ClCompile Include="CondimentDecorator.cpp" />
     <ClCompile Include="DarkRoast.cpp" />
     <ClCompile Include="DesignPattern.cpp" />
@@ -153,15 +155,20 @@
     <ClCompile Include="HouseBlend.cpp" />
     <ClCompile Include="Milk.cpp" />
     <ClCompile Include="Mocha.cpp" />
+    <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="ObserverTest.cpp" />
     <ClCompile Include="QuackBehavlor.cpp" />
     <ClCompile Include="QuackG.cpp" />
     <ClCompile Include="QuackJ.cpp" />
     <ClCompile Include="QuackMute.cpp" />
     <ClCompile Include="RedHeadDuck.cpp" />
+    <ClCompile Include="Subject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beverage.h" />
     <ClInclude Include="CoffeeTest.h" />
+    <ClInclude Include="ConcreteObs.h" />
+    <ClInclude Include="ConcreteSub.h" />
     <ClInclude Include="CondimentDecorator.h" />
     <ClInclude Include="DarkRoast.h" />
     <ClInclude Include="Duck.h" />
@@ -173,11 +180,14 @@
     <ClInclude Include="HouseBlend.h" />
     <ClInclude Include="Milk.h" />
     <ClInclude Include="Mocha.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="ObserverTest.h" />
     <ClInclude Include="QuackBehavlor.h" />
     <ClInclude Include="QuackG.h" />
     <ClInclude Include="QuackJ.h" />
     <ClInclude Include="QuackMute.h" />
     <ClInclude Include="RedHeadDuck.h" />
+    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
