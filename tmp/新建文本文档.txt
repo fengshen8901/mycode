@@ -1,6 +1,8 @@
 2-18  放技能
 0-11  移动
-@notice |E:3,50002,7002,128,65,&U:&C:0x00FF00&T:前往护送|		
+@notice |E:3,50002,7002,128,65,&U:&C:0x00FF00&T:前往护送|	
+
+="INSERT INTO `h5gy_ltzs`.`ec_system_items` (`item_id`, `item_name`, `status`) VALUES ("&B8&",'"&M8&"',1);"	
 
 @instantMove 90 50	--瞬间移动到一个点去
 @setattr 4 10000000
@@ -15,7 +17,10 @@
 @gmTask 1000 100060
 @openact 4
 @rsfranking
+@additem 450001 100   改名卡
 -----------------------------------------------------
+print( debug.traceback() )
+-----------------------
 local award = utils.table_clone(dayConfig.rewards)
 LActor.sendTipmsg(actor, "请清理背包")
 
@@ -69,6 +74,8 @@ feng.lai
 lf123123
 https://192.168.1.124/svn/h5gy/
 
+grouptest zygame6868
+
 sql
 user=mmo_admin
 password=MGU3ZjM2NjcwMGEy
@@ -76,7 +83,9 @@ password=MGU3ZjM2NjcwMGEy
 192.168.20.123:22	aa123456
 106.52.198.105 mmo_admin  2433     MGU3ZjM2NjcwMGEy 
 
-
+120.92.138.67
+OhVFYfUKro1Xxw==
+16333
 --------------------------------------------------------------
 local Y,M,d,h,m = string.match(baseCfg.openTime, "(%d+)%.(%d+)%.(%d+)")
 if Y == nil or M == nil or d == nil then
