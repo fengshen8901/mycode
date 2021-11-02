@@ -36,16 +36,17 @@
 ---------------------------------
 重定向 >  (ls > 123.txt)
 管道 | (ls | grep "设计*")
-如何查看某个目录大小：  du ./目录 -h
+如何查看录某个目大小：  du ./目录 -h
 查看命令所在路径 whick ls
 
 ---------------------------------
 
 
 快捷键
-遍历历史记录：向上 ctrl+p,向下 ctrl+n
-删除： 前 ctrl+h,后 ctrl+d；前所有 ctrl+u,后所有 ctrl+k
-移动：前 ctrl+b,后 ctrl+f；最前 ctrl+a,最后 ctrl+e
+*遍历历史记录：向上 ctrl+p,向下 ctrl+n
+*删除： 前 ctrl+h,后 ctrl+d；前所有 ctrl+u,后所有 ctrl+k
+*移动：前 ctrl+b,后 ctrl+f；最前 ctrl+a,最后 ctrl+e
+
 安装：sudo apt-get install 软件名（tree）
 输出当前路径：pwd
 新增目录：mkdir (目录名） 多层次 mkdir aa/bb/cc -p
@@ -70,32 +71,25 @@ cat filename (适用于较小文件）
 more filename（回车下一行，空格下页，q退出）
 less filename
 head filename(默认前10行） head -5 filename
-tail filename(默认尾部10行） tail -5 filename
+tail filename(默认尾部10行） tail -5 filename (-f 追踪显示)
 
-软链接：ln -s src dstName (src最好用绝对路径）快捷方式，目录也可以
-硬链接：ln src dstName(硬链接计数增加）共享空间
-
-pwd -P
-ls -al；
-mkdir -mp
-rmdir -p
-cp [-adfilprsu] 来源档(source) 目标档(destination)
-rm [-fir] 文件或目录
-mv [-fiu] source destination
+软链接：ln -s src dstName (src最好用绝对路径）快捷方式，目录也可以 --指向指针的指针
+*硬链接：ln src dstName(硬链接计数增加）共享空间，--指针
 
 修改文件或目录权限
-chmod u/g/o/a +/- rwx dst
-chmod 777 dst     chmod -440 dst
-修改文件所有者或所属组
-(sudo) chown 新的用户 文件名    --用户，组，在etc/passwd(group)
-chown 新的用户 : 新的组  文件名
+*chmod u/g/o/a +/- rwx dst
+chmod 777 dst    (4-r  2-w  1-x)
+
+*修改文件所有者或所属组
+*(sudo) chown 新的用户 文件名    --用户，组，在etc/passwd(group)
+*chown 新的用户 : 新的组  文件名
  
 一、文件与目录管理
 一般情况下  白色 -- 普通文件；白色 -- 普通文件；绿色 -- 可执行文件；红色 -- 压缩文件；青色 -- 链接文件；黄色 -- 设备文件；灰色 -- 其他文件
 ls -l(h)
 drwxr-xr-x 1 root root 4.0K May 21  2019 src/
-拥有者，所属组，其他
 普通文件（-）;目录（d）;符号链接（l）;管道（p）;套接字（s）;字符设备（c）;块（b）
+拥有者，所属组，其他 权限
 1：硬链接计数
 4.0K:大小（如果是目录永远显示4K(4096）,目录本身大小不包括里面内容)
 
@@ -104,16 +98,18 @@ drwxr-xr-x 1 root root 4.0K May 21  2019 src/
 文件类型：find 路径 -type 文件类型; 普通文件（f）;目录（d）;符号链接（l）;管道（p）;套接字（s）;字符设备（c）;块（b）
 文件大小：find 路径 -size +10k(-5M);  k小写，M大写
 	find ./ -size +10k -size -100k (大于10，小于100）
-创建日期：find 路径 -ctime -n(+n); n天内创建的/n天前创建的
-修改日期：find 路径 -mtime -n(+n); 
-访问日期：find 路径 -atime -n(+n); 
-深度：（几层路径） -maxdepth n;  - mindepth n
+*创建日期：find 路径 -ctime -n(+n); n天内创建的/n天前创建的
+*修改日期：find 路径 -mtime -n(+n); 
+*访问日期：find 路径 -atime -n(+n); 
+*深度：（几层路径） -maxdepth n;  - mindepth n
 高级查找：列出详细信息
 	find ./ -type d -exec ls -l {} \;
 	find ./ -type d -ok ls -l {} \;
 	find ./ -type d | xargs ls -l
 
-根据文件内容查找文件：(sudo) grep -r(有目录）“查找的内容” 路径(grep -r "hello world" ~)       -n显示所在行数 -i不区分大小写 
+根据文件内容查找文件：
+目录中找  (sudo) grep -r “查找的内容” 路径(grep -r "hello world" ~)       -n显示所在行数 -i不区分大小写 
+文件中找  (sudo) grep “查找的内容” 文件名(grep "hello world" main.cc)       -n显示所在行数 -i不区分大小写 
 
 压缩：
 格式
@@ -134,6 +130,7 @@ zip 压缩包名（不用指定后缀）压缩内容 (内容中有目录时 -r)
 解压：unzip 压缩包名 -d 解压目录
 
 --------------------------------
+***********
 tar只负责打包、解包，不进行压缩
 打包：tar -cvf xxx.tar 需要打包的文件
 解包：tar -xvf xxx.tar         不指定路径，默认在当前路径解包
