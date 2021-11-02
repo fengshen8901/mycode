@@ -22,6 +22,9 @@
     <Filter Include="3装饰者模式">
       <UniqueIdentifier>{b4ed572a-e647-4341-a207-cdcd4ea21041}</UniqueIdentifier>
     </Filter>
+    <Filter Include="4工厂模式">
+      <UniqueIdentifier>{2cc791eb-e89f-4424-ab25-de5550cf5bb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignPattern.cpp">
@@ -96,6 +99,27 @@
     <ClCompile Include="ObserverTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Produc.cpp">
+      <Filter>4工厂模式</Filter>
+    </ClCompile>
+    <ClCompile Include="Factor.cpp">
+      <Filter>4工厂模式</Filter>
+    </ClCompile>
+    <ClCompile Include="ProducA1.cpp">
+      <Filter>4工厂模式</Filter>
+    </ClCompile>
+    <ClCompile Include="ProducA2.cpp">
+      <Filter>4工厂模式</Filter>
+    </ClCompile>
+    <ClCompile Include="ProducB1.cpp">
+      <Filter>4工厂模式</Filter>
+    </ClCompile>
+    <ClCompile Include="FactorTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProducB2.cpp">
+      <Filter>4工厂模式</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Duck.h">
@@ -165,6 +189,30 @@
       <Filter>2观察者模式</Filter>
     </ClInclude>
     <ClInclude Include="ObserverTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Produc.h">
+      <Filter>4工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Factor.h">
+      <Filter>4工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="ProducB2.h">
+      <Filter>4工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="ProducB1.h">
+      <Filter>4工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="ProducA2.h">
+      <Filter>4工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="FactorTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProducA1.h">
+      <Filter>4工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="head.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -33,6 +33,14 @@
 /opt：默认是空的，我们安装额外软件可以放在这个里面。
 /srv：存放服务启动后需要提取的数据（不用服务器就是空）
 
+---------------------------------
+重定向 >  (ls > 123.txt)
+管道 | (ls | grep "设计*")
+如何查看某个目录大小：  du ./目录 -h
+查看命令所在路径 whick ls
+
+---------------------------------
+
 
 快捷键
 遍历历史记录：向上 ctrl+p,向下 ctrl+n
@@ -124,6 +132,24 @@ rar a 压缩包名（不用指定后缀）压缩内容 (内容中有目录时 -r
 zip/unzip(需要安装 sudo apt-get install zip)
 zip 压缩包名（不用指定后缀）压缩内容 (内容中有目录时 -r)
 解压：unzip 压缩包名 -d 解压目录
+
+--------------------------------
+tar只负责打包、解包，不进行压缩
+打包：tar -cvf xxx.tar 需要打包的文件
+解包：tar -xvf xxx.tar         不指定路径，默认在当前路径解包
+指定目录解包：tar -xvf xxx.tar -C 指定路径目录
+
+gzip压缩tar包
+压缩：gzip -r xxx.tar  xxx.tar.gz 自动在当前目录生成：xxx.tar.gz
+		gzip xxx.tar
+解压：gzip -d xxx.tar.gz
+
+压缩打包：tar -czvf xxx.tar.gz 所需文件
+解压解包：tar -xzvf xxx.tar.gz
+
+压缩打包：tar -cjvf xxx.tar.bz2 所需文件
+解压解包：tar -xjvf xxx.tar.bz2 -C 指定路径
+------------------------------------
 
 软件安装与卸载
 在线	安装：sudo apt install 软件名

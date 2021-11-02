@@ -23,7 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{1bb50d36-b023-435f-a4f8-d31042548a01}</ProjectGuid>
     <RootNamespace>DesignPattern</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -148,6 +148,8 @@
     <ClCompile Include="DesignPattern.cpp" />
     <ClCompile Include="Duck.cpp" />
     <ClCompile Include="DuckTest.cpp" />
+    <ClCompile Include="Factor.cpp" />
+    <ClCompile Include="FactorTest.cpp" />
     <ClCompile Include="FlyBehavlor.cpp" />
     <ClCompile Include="FlyHigh.cpp" />
     <ClCompile Include="FlyNoWay.cpp" />
@@ -157,6 +159,11 @@
     <ClCompile Include="Mocha.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="ObserverTest.cpp" />
+    <ClCompile Include="Produc.cpp" />
+    <ClCompile Include="ProducA1.cpp" />
+    <ClCompile Include="ProducA2.cpp" />
+    <ClCompile Include="ProducB1.cpp" />
+    <ClCompile Include="ProducB2.cpp" />
     <ClCompile Include="QuackBehavlor.cpp" />
     <ClCompile Include="QuackG.cpp" />
     <ClCompile Include="QuackJ.cpp" />
@@ -173,15 +180,23 @@
     <ClInclude Include="DarkRoast.h" />
     <ClInclude Include="Duck.h" />
     <ClInclude Include="DuckTest.h" />
+    <ClInclude Include="Factor.h" />
+    <ClInclude Include="FactorTest.h" />
     <ClInclude Include="FlyBehavlor.h" />
     <ClInclude Include="FlyHigh.h" />
     <ClInclude Include="FlyNoWay.h" />
     <ClInclude Include="GreenHeadDuck.h" />
+    <ClInclude Include="head.h" />
     <ClInclude Include="HouseBlend.h" />
     <ClInclude Include="Milk.h" />
     <ClInclude Include="Mocha.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="ObserverTest.h" />
+    <ClInclude Include="Produc.h" />
+    <ClInclude Include="ProducA1.h" />
+    <ClInclude Include="ProducA2.h" />
+    <ClInclude Include="ProducB1.h" />
+    <ClInclude Include="ProducB2.h" />
     <ClInclude Include="QuackBehavlor.h" />
     <ClInclude Include="QuackG.h" />
     <ClInclude Include="QuackJ.h" />
