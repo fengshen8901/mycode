@@ -50,6 +50,10 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MyLua.cpp" />
+    <ClCompile Include="vsp\serverInterface.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLuaExport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="头文件">
@@ -109,5 +113,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MyLua.h" />
+    <ClInclude Include="StdAfx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLuaExport.h" />
+    <ClInclude Include="tclass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include=".\vsp\serverInterface.scp" />
   </ItemGroup>
 </Project>

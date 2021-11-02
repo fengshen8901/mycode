@@ -30,27 +30,27 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -115,14 +115,14 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\common\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>..\common\lua;..\common\tolua++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\common\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lualib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lualib.lib;tolua++.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,7 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\common\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\common\lua;..\common\tolua++;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,6 +152,7 @@
     <ClCompile Include="MyAlgorithm.cpp" />
     <ClCompile Include="MyLeetcode.cpp" />
     <ClCompile Include="MyLua.cpp" />
+    <ClCompile Include="MyLuaExport.cpp" />
     <ClCompile Include="MySort.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="MyThread.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Sudoku.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Tool.cpp" />
+    <ClCompile Include="vsp\serverInterface.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AtomicTest.h" />
@@ -170,6 +172,7 @@
     <ClInclude Include="MyAlgorithm.h" />
     <ClInclude Include="MyLeetcode.h" />
     <ClInclude Include="MyLua.h" />
+    <ClInclude Include="MyLuaExport.h" />
     <ClInclude Include="MySort.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="MyThread.h" />
@@ -177,10 +180,21 @@
     <ClInclude Include="output_container.h" />
     <ClInclude Include="RBTree.h" />
     <ClInclude Include="shape_wrapper.h" />
+    <ClInclude Include="StdAfx.h" />
     <ClInclude Include="STLalgorithm.h" />
     <ClInclude Include="Sudoku.h" />
+    <ClInclude Include="tclass.h" />
     <ClInclude Include="threadsafe_queue.h" />
     <ClInclude Include="Tool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include=".\vsp\serverInterface.scp">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd ./vsp
+		..\..\common\tolua++\bin\tolua++.exe  -n MyCode -o serverInterface.cc serverInterface.scp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">serverInterface.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

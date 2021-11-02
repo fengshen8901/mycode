@@ -1,11 +1,103 @@
 #include "MyLua.h"
 #include <iostream>
 
-extern "C"
+
+
+MyLua::MyLua()
 {
-#include "lua.h"
-#include "lauxlib.h"
-#include "lauxlib.h"
+	luaState = luaL_newstate();
+	if (luaState)
+	{
+		luaopen_base(luaState);
+	}
+	else //print err
+	{	}
+}
+
+MyLua::~MyLua()
+{
+	if (luaState)
+	{
+		lua_close(luaState);
+		luaState = nullptr;
+	}
+}
+
+bool MyLua::LoadLuaFile(const char* fileName)
+{
+	if (!luaState) return false; //print err
+	auto err = luaL_dofile(luaState, fileName);
+	if (err)
+	{
+		printf("[MyLua::LoadLuaFile]luaL_dofile(%s) is error(%d)(%s).\n",
+			fileName, err, lua_tostring(luaState, -1));
+		return false;
+	}
+	return true;
+}
+
+double MyLua::CallFileFun(const char* funName, const char* format, ...)
+{
+	if (!luaState) return false; //print err
+
+	auto top = lua_gettop(luaState);
+	lua_pop(luaState, top);	// 清栈
+
+	lua_getglobal(luaState, funName);
+	va_list args;
+	va_start(args, format);
+	int cnt = ParseParameter(format, args);
+	va_end(args);
+
+	double res = 0.0;
+	int err = lua_pcall(luaState, cnt, 1, 0);
+	if (err)
+	{
+		printf("[CLuaFn::CallFileFun]call function(%s) error(%d).\n", funName, err);
+		return res;
+	}
+
+	if (lua_isnumber(luaState, -1))
+		res = lua_tonumber(luaState, -1);
+	return res;
+}
+
+lua_State* MyLua::GetState()
+{
+	return luaState;
+}
+
+int MyLua::ParseParameter(const char* format, va_list& args)
+{
+	int cnt = 0;
+	char* p = (char*)format;
+	while (*p != '\0')
+	{
+		if (*p == '%')
+		{
+			++p;
+			switch (*p)
+			{
+			case 'd':
+				lua_pushnumber(luaState, va_arg(args, int));
+				break;
+			case 'f':
+				lua_pushnumber(luaState, va_arg(args, double));
+				break;
+			case 's':
+				lua_pushstring(luaState, va_arg(args, char*));
+				break;
+			case 'z':
+				lua_pushlightuserdata(luaState, va_arg(args, void*));
+				break;
+			default:
+				break;
+			}
+			++cnt;
+		}
+		++p;
+	}
+	return cnt;
 }
 
 void MyLua::LuaTest()
@@ -54,6 +146,10 @@ void MyLua::LuaTest1()
 	str = lua_tostring(L, -1);
 	std::cout << "tbl:name = " << str.c_str() << std::endl; //tbl:name = shun  
 
+	lua_getglobal(L, "val");
+	int val = lua_tonumber(L, -1);
+	std::cout << "val = " << val << std::endl; //tbl:name = shun  
+
 	//6.读取函数  
 	lua_getglobal(L, "add");        // 获取函数，压入栈中  
 	lua_pushnumber(L, 10);          // 压入第一个参数  
@@ -79,4 +175,9 @@ void MyLua::LuaTest1()
 	/*需要注意的是：堆栈操作是基于栈顶的，就是说它只会去操作栈顶的值。
 	举个比较简单的例子，函数调用流程是先将函数入栈，参数入栈，然后用lua_pcall调用函数，此时栈顶为参数，栈底为函数，所以栈过程大致会是：参数出栈->保存参数->参数出栈->保存参数->函数出栈->调用函数->返回结果入栈。
 	类似的还有lua_setfield，设置一个表的值，肯定要先将值出栈，保存，再去找表的位置。*/
+}
+
+void MyLua::LuaTest2()
+{
+
 }

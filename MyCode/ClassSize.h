@@ -147,6 +147,14 @@ public:
 	//virtual void g();
 private:
 };
+//vfself--vfbase
+//0
+//(vfbase) 0
+//vfbase
+//vb
+//4
+//24
+
 // -- vfptr --自己的,如果有新的虚函数
 // vbptr
 // 0--自己的成员变量 
