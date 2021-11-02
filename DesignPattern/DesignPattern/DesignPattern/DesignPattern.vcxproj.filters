@@ -25,6 +25,12 @@
     <Filter Include="4工厂模式">
       <UniqueIdentifier>{2cc791eb-e89f-4424-ab25-de5550cf5bb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="5单件模式">
+      <UniqueIdentifier>{54ea3f56-b7b4-4a6f-9c75-50afb98e7173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="6命令模式">
+      <UniqueIdentifier>{b7155703-426f-4381-beda-ef1f5e0edc51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignPattern.cpp">
@@ -120,6 +126,36 @@
     <ClCompile Include="ProducB2.cpp">
       <Filter>4工厂模式</Filter>
     </ClCompile>
+    <ClCompile Include="CeilingFan.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CeilingFunHighCommond.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CeilingFunOffCommond.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="Commond.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CommondControl.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="Machine.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineOffCommond.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineOnCommond.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="NoCommond.cpp">
+      <Filter>6命令模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CommondClien.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Duck.h">
@@ -213,6 +249,36 @@
       <Filter>4工厂模式</Filter>
     </ClInclude>
     <ClInclude Include="head.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineOnCommond.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineOffCommond.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Machine.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CommondControl.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Commond.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CeilingFunOffCommond.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CeilingFunHighCommond.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CeilingFan.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="NoCommond.h">
+      <Filter>6命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CommondClien.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -140,7 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Beverage.cpp" />
+    <ClCompile Include="CeilingFan.cpp" />
+    <ClCompile Include="CeilingFunHighCommond.cpp" />
+    <ClCompile Include="CeilingFunOffCommond.cpp" />
     <ClCompile Include="CoffeeTest.cpp" />
+    <ClCompile Include="Commond.cpp" />
+    <ClCompile Include="CommondClien.cpp" />
+    <ClCompile Include="CommondControl.cpp" />
     <ClCompile Include="ConcreteObs.cpp" />
     <ClCompile Include="ConcreteSub.cpp" />
     <ClCompile Include="CondimentDecorator.cpp" />
@@ -155,8 +161,12 @@
     <ClCompile Include="FlyNoWay.cpp" />
     <ClCompile Include="GreenHeadDuck.cpp" />
     <ClCompile Include="HouseBlend.cpp" />
+    <ClCompile Include="Machine.cpp" />
+    <ClCompile Include="MachineOffCommond.cpp" />
+    <ClCompile Include="MachineOnCommond.cpp" />
     <ClCompile Include="Milk.cpp" />
     <ClCompile Include="Mocha.cpp" />
+    <ClCompile Include="NoCommond.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="ObserverTest.cpp" />
     <ClCompile Include="Produc.cpp" />
@@ -173,7 +183,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beverage.h" />
+    <ClInclude Include="CeilingFan.h" />
+    <ClInclude Include="CeilingFunHighCommond.h" />
+    <ClInclude Include="CeilingFunOffCommond.h" />
     <ClInclude Include="CoffeeTest.h" />
+    <ClInclude Include="Commond.h" />
+    <ClInclude Include="CommondClien.h" />
+    <ClInclude Include="CommondControl.h" />
     <ClInclude Include="ConcreteObs.h" />
     <ClInclude Include="ConcreteSub.h" />
     <ClInclude Include="CondimentDecorator.h" />
@@ -188,8 +204,12 @@
     <ClInclude Include="GreenHeadDuck.h" />
     <ClInclude Include="head.h" />
     <ClInclude Include="HouseBlend.h" />
+    <ClInclude Include="Machine.h" />
+    <ClInclude Include="MachineOffCommond.h" />
+    <ClInclude Include="MachineOnCommond.h" />
     <ClInclude Include="Milk.h" />
     <ClInclude Include="Mocha.h" />
+    <ClInclude Include="NoCommond.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="ObserverTest.h" />
     <ClInclude Include="Produc.h" />
