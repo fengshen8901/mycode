@@ -3,3 +3,4 @@ x64/
 ./MyCode/x64/
 ./MyCode/MyCode.vcxproj
 ./MyCode/MyCode.vcxproj.filters
+./DesignPattern/DesignPattern/DesignPattern/x64
