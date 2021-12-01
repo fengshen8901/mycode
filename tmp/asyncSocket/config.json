@@ -1,0 +1,12 @@
+{
+  "socket": {
+    "ip": "0.0.0.0",
+	"port": "10001"
+	},
+  "sql": {
+	"ip": "127.0.0.1",
+	"user": "administrator",
+	"password": "administrator",
+	"dbName": "plane_game"
+	}
+}
