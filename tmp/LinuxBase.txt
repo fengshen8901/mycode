@@ -75,14 +75,6 @@ tail filename(默认尾部10行） tail -5 filename (-f 追踪显示)
 
 软链接：ln -s src dstName (src最好用绝对路径）快捷方式，目录也可以 --指向指针的指针
 *硬链接：ln src dstName(硬链接计数增加）共享空间，--指针
-
-修改文件或目录权限
-*chmod u/g/o/a +/- rwx dst
-chmod 777 dst    (4-r  2-w  1-x)
-
-*修改文件所有者或所属组
-*(sudo) chown 新的用户 文件名    --用户，组，在etc/passwd(group)
-*chown 新的用户 : 新的组  文件名
  
 一、文件与目录管理
 一般情况下  白色 -- 普通文件；白色 -- 普通文件；绿色 -- 可执行文件；红色 -- 压缩文件；青色 -- 链接文件；黄色 -- 设备文件；灰色 -- 其他文件
@@ -175,7 +167,7 @@ vim相关 （帮助文档vimtutor）
 	光标移到  H(左) J(下) K(上) L(右)
 		移动到行首  0  行尾  $
 		文件首部  gg  尾部  G
-		跳到n行  n G
+		跳到n行  n G 或 n gg
 		下跳n行  n 回车
 	删除
 		光标前字符  X  后  x
@@ -223,13 +215,85 @@ vim相关 （帮助文档vimtutor）
 			水平  vim -o(n) 文件名 文件名
 			垂直  vim -O(n) 文件名 文件名
 
+
+二、用户和用户组管理 配置文件--用户，组，在 /etc/passwd(group)
+useradd test -m(自动创建/home/test文件夹) -g lf(分配到lf组)   创建test用户
+userdel -r test  删除test用户及其家目录
+usermod -l test1 test    将用户test修改为test1
+
+passwd test     修改用户密码
+groupadd  test   添加用户组为test
+groupdel test  删除用户组test
+groupmod -n root test    更改test用户组为root
+su test  切换当前用户为test用户 
+
+修改文件或目录权限
+*chmod u/g/o/a +/- rwx dst  --chmod u +x dst; chmod o=rwx dst
+chmod 777 dst    (4-r  2-w  1-x)
+
+*修改文件所有者或所属组
+*(sudo) chown 新的用户 文件名   
+*chown 新的用户 : 新的组  文件名
+*chgrp 组名 文件名  --changeGroup
+
+三、磁盘管理
+df命令参数功能：检查文件系统的磁盘空间占用情况。
+df [-ahikHTm] [目录或文件名]	df -h
+
+du命令是对文件和目录磁盘使用的空间的查看
+du [-ahskm] 文件或目录名称
+
+fdisk 是 Linux 的磁盘分区表操作工具。
+fdisk [-l] 装置名称
+
+mkfs [-t 文件系统格式] 装置文件名  磁盘格式化
+
+磁盘挂载使用 mount 命令，卸载使用 umount 命令。
+mount [-t 文件系统] [-L Label名] [-o 额外选项] [-n]  装置文件名  挂载点
+umount [-fn] 装置文件名或挂载点
+
+四、vi/vim
+:q!
+
+#语法格式： >  文件
+ 作用:  将内容输出到文件，若文件中有内容则覆盖。若文件不存在，则创建文件
+ 示例:  
+      ll > a.txt   查看详细后输出到a.txt 。
+      cat a.txt > b.txt  将a.txt中的内容添加到b.txt中 。
+	  
+#语法格式： >>  文件
+  作用:  将内容追加到文件，若文件中有内容则追加。若文件不存在，则创建文件    
+ 示例:  
+      ll >> a.txt   查看详细后追加到a.txt 。
+      cat a.txt >> b.txt  将a.txt中的内容添加到b.txt中 。
+	  
+
+ps -aux   显示所有进程（静态） 可配合管道查看 pa -aux | grep debug
+kill 319877  杀掉进程319877  -- kill -9 319877  强制杀掉
+top 显示所有进程（动态） top -d 5  每隔5秒更新一次 
+df -h   以比较容易阅读方式查看磁盘使用情况
+shutdown -h now      立即关机
+shutdown -r now      立即重启	  
+shutdown -h 22:30    22:30关机	  
+reboot  重启	
+
+查看当前日历  cal
+查看整年日历  cal -y
+输出当前时间  date
+
+
+------------------------------------------------------------
 gcc
 预处理 ->  编译 ->  汇编  ->  链接
+1. hello.c  预处理(cpp) gcc -E  ->hello.i  c文件
+2. hello.i  编译器(gcc) gcc -S  ->hello.s  汇编文件
+3. hello.s  汇编器(ar)  gcc -c  ->hello.o  二进制文件
+4. hello.o  链接器(ld)  gcc     ->a.out    可执行文件
 gcc hello.c -I ./include/ -o hell -D DEBUG -Wall -O3
+
 常用参数
 	-v/--version  版本号
 	-I  编译时指定头文件路径（附加包含目录）	
-	-c  将汇编文件(.s)生成二进制文件(.o)
 	-o 指定生成的文件名
 	-g  gdb调试时用的文件
 	-D  在编译的时候指定一个宏（测试程序时）
@@ -280,61 +344,106 @@ gcc hello.c -I ./include/ -o hell -D DEBUG -Wall -O3
 				3. 粗暴设置：直接将libmytest.so文件拷贝到/usr/lib/【/lib】目录下。(受libc库的启发)
 				4. 将libmytest.so所在绝对路径追加入到/etc/ld.so.conf文件，使用sudo ldconfig -v 更新
    
+------------------------------------------------------------
+make(Makefile)
+注释 #
 
+规则： 目标，依赖，命令
+gcc a.c b.c c.c -o app
+目标：依赖
+	(tab缩进)命令
+app:a.c b.c c.c
+	gcc a.c b.c c.c -o app
 
-二、用户和用户组管理
-useradd test    创建test用户
-adduser test    创建test用户
-userdel test   删除test用户
-userdel -r test  删除test用户及其家目录
-usermod -l test1 test    将用户test修改为test1
-passwd test     修改用户密码
-groupadd  test   添加用户组为test
-groupdel test  删除用户组test
-groupmod -n root test    更改test用户组为root
-su test  切换当前用户为test用户 
+变量：
+自定义变量
+	obj = a.o b.o c.o
+	tmp = $(obj)
+makefile自带的变量，一般全大写的
+	CPPFLAGS, CC
+自动变量，只能在规则的命令中使用
+	$@  规则中的目标
+	$<  规则中的第一个依赖
+	$^  规则中所有的依赖
 
-三、磁盘管理
-df命令参数功能：检查文件系统的磁盘空间占用情况。
-df [-ahikHTm] [目录或文件名]	df -h
+模式匹配：
+obj = a.o b.o c.o
+app:$(obj)
+	gcc $(obj) -o app
+%.o:%.c
+	gcc -c $^ -o $@
 
-du命令是对文件和目录磁盘使用的空间的查看
-du [-ahskm] 文件或目录名称
+函数：
+查找指定目录下指定类型的文件 wildcard
+匹配替换 patsubst
+src = $(wildcard ./*.c)
+obj = $(patsubst %.c, %.o, $(src))
+app:$(obj)
+	gcc $^ -o $@
+%.o:%.c
+	gcc -c $^ -o $@
 
-fdisk 是 Linux 的磁盘分区表操作工具。
-fdisk [-l] 装置名称
+清理项目：(清楚中间文件 *.o)
+clean:
+	rm $(obj) app -rf
 
-mkfs [-t 文件系统格式] 装置文件名  磁盘格式化
+::
+命令前加 ‘-’ 执行不成功跳过执行下面的(忽略执行失败的命令)
+声明伪目标：不做更新检查直接执行命令
+.PHONY:clean
+clean:
+	-rm $(obj) app -rf
 
-磁盘挂载使用 mount 命令，卸载使用 umount 命令。
-mount [-t 文件系统] [-L Label名] [-o 额外选项] [-n]  装置文件名  挂载点
-umount [-fn] 装置文件名或挂载点
+------------------------------------------------------------
+gdb(用执行程序调试core文件)
+gcc a.c b.c -g -o app  加-g附加调试信息
 
-四、vi/vim
-:q!
+启动
+gdb 可执行程序(app)
+设置参数
+set args aaa bbb
 
-#语法格式： >  文件
- 作用:  将内容输出到文件，若文件中有内容则覆盖。若文件不存在，则创建文件
- 示例:  
-      ll > a.txt   查看详细后输出到a.txt 。
-      cat a.txt > b.txt  将a.txt中的内容添加到b.txt中 。
-	  
-#语法格式： >>  文件
-  作用:  将内容追加到文件，若文件中有内容则追加。若文件不存在，则创建文件    
- 示例:  
-      ll >> a.txt   查看详细后追加到a.txt 。
-      cat a.txt >> b.txt  将a.txt中的内容添加到b.txt中 。
-	  
-ps -aux   显示所有进程 
-kill 319877  杀掉进程319877
-top -d 5  每隔5秒更新一次 
-df -h   以比较容易阅读方式查看磁盘使用情况
-shutdown -h now      立即关机
-shutdown -r now      立即重启	  
-shutdown -h 22:30    22:30关机	  
-reboot  重启	  
-	  
-	  
-	  
-	  
-	  
+运行
+r  (run)
+
+查看代码
+l  (list)
+后面可接行号，函数名
+查看其他文件时
+l a.c:10  查看a.c文件的第10行
+
+设置断点
+b  (break) 加行号
+也可以函数名或其他文件名：行号/函数名
+条件断点
+b 17 if i==2
+
+查看信息
+i  (info)
+i b 查看断点
+
+删除断点
+d  (del) 加查看信息里的编号
+d 1
+d 1 2
+d 3-5  [全闭区间]
+
+设置断点生效与否
+dis (disable) 加编号
+ena (enable)  加编号
+
+r运行起来
+p  (print) 加变量名
+ptype  加变量名  打印变量类型
+display  加变量名  添加到监视
+undisplay  加编号  删除监视
+set var 变量名=value 设置变量的值
+
+n  (next)  逐行运行(F10)
+s  (step)  逐步运行，可追踪到函数内部(F11)
+finish  跳出函数
+until  跳出当前块(循环)
+c  (continue) 继续运行
+
+退出
+q  (quit)
