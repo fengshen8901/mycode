@@ -1,0 +1,588 @@
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_0" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_0" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_1" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_1" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_2" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_2" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_3" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_3" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_4" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_4" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_5" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_5" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_6" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,2}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_6" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_7" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_7" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_8" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_8" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_9" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_9" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_10" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_10" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_11" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_11" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_12" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_12" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_13" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,54}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_13" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_14" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_14" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_15" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_15" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_16" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_16" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_17" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_17" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_18" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_18" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_19" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_19" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_20" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,106}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_20" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_21" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_21" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_22" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_22" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_23" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_23" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_24" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_24" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_25" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_25" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_26" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_26" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_27" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,158}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_27" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_28" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_28" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_29" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_29" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_30" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_30" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_31" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_31" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_32" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_32" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_33" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_33" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_34" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,210}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_34" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_35" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_35" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_36" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_36" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_37" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_37" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_38" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_38" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_39" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_39" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_40" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_40" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_41" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,262}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_41" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_42" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,5},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_42" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_43" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,57},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_43" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_44" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,109},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_44" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_45" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,161},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_45" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_46" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,213},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_46" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_47" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,265},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_47" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
+<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_BG_48" >
+	<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+	<Property Name="UnifiedPosition" Value="{{0,317},{0,314}}" />
+	<Property Name="AlwaysOnTop" Value="True" />
+	<Property Name="FrameEnabled" Value="False" />
+	<Window Type="GameLook/StaticImage" Name="GMLotteryTicketRes/MainGB/LotteryTicket_48" >
+		<Property Name="AlwaysOnTop" Value="True" />
+		<Property Name="UnifiedSize" Value="{{0,48},{0,48}}" />
+		<Property Name="UnifiedPosition" Value="{{0,0},{0,0}}" />
+		<Property Name="FrameEnabled" Value="False" />
+	</Window>
+</Window>
