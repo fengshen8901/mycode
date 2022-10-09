@@ -19,11 +19,27 @@ public:
 	virtual void a() = 0;
 };
 int tolua_MyCode_open(lua_State* tolua_S);
+
+struct stBitArea
+{
+	stBitArea() : adulp(0), planInterruptionDays(0)
+	{
+
+	}
+
+	short adulp : 8;
+	short planInterruptionDays : 8;
+};
+
 int main()
 {
-	const char* p = "&actor=%E9%98%BF%E6%96%AF%E8%92%82%E6%9C%89&actor_id";
-	std::cout << p << std::endl;
-	std::cout << strlen(p) << std::endl;
+	
+
+	//const char* p = "&actor=%E9%98%BF%E6%96%AF%E8%92%82%E6%9C%89&actor_id";
+	//std::cout << p << std::endl;
+	//std::cout << strlen(p) << std::endl;
+
+
 	//ClassSize::Test();
 
 	//MyLua::LuaTest1();
